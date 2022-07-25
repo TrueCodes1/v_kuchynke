@@ -1,10 +1,16 @@
+// IMPORTING GLOBAL STYLES
+import GlobalStyle from "./styles/globalStyles";
 
-function App() {
+// IMPORTING STATEFUL CONTAINERS
+import ReleaseDate from "./containers/ReleaseDate";
+
+const App = () => {
   return (
-    <div className="App">
-      Papkaj!
-    </div>
+    <>
+      <GlobalStyle />
+      <ReleaseDate />
+    </>
   );
-}
+};
 
 export default App;

@@ -1,5 +1,5 @@
 {
-    "scripts": {
-        "git-update": "git add . && git commit && git push origin main && clear"
-    }
+  "scripts": {
+    "git-update": "git add . && git commit && git push origin main && clear"
+  }
 }
