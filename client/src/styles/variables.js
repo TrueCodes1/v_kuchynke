@@ -1,10 +1,11 @@
 export const COLORS = {
   PRIMARY: "#624455",
-  SECONDARY: "#9B6D97",
-  TERTIARY: "#F3F3F3",
+  SECONDARY: "#F3F3F3",
+  TERTIARY: "#9B6D97",
 };
 
 export const FONT_SIZES = {
+  MAIN_BRANDING: "55px",
   ULTRA_GIANT: "46px",
   GIANT: "36px",
   LARGE: "28px",
@@ -20,9 +21,9 @@ export const FONT_FAMILIES = {
 };
 
 export const BREAKPOINTS = {
-  MOBILE: "",
-  TABLET: "",
-  LAPTOP: "",
-  DESKTOP: "",
+  MOBILE: "480px",
+  TABLET: "768px",
+  LAPTOP: "1024px",
+  DESKTOP: "1200px",
   LARGE: "",
 };

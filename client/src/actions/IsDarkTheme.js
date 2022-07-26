@@ -1,19 +1,15 @@
-
 // IMPORT REDUX ACTION TYPES
 import reduxActionsStates from "../reduxActionsStates/reduxActionsStates";
 
-const isDarkTheme = (isDarkTheme) => {
-    return {
-      type: reduxActionsStates.updateTheme,
-      payload: isDarkTheme
-    };
+const darkTheme = (isDarkTheme) => {
+  return {
+    type: reduxActionsStates.updateTheme,
+    payload: isDarkTheme,
   };
-  
-  const updateIsDarkTheme= (isDarkTheme) => {
-    return (dispatch) => {
-      dispatch(isDarkTheme(isDarkTheme));
-    };
+};
+
+export const updateIsDarkTheme = (isDarkTheme) => {
+  return (dispatch) => {
+    dispatch(darkTheme(isDarkTheme));
   };
-  
-  module.exports = { updateIsDarkTheme };
-  
+};
