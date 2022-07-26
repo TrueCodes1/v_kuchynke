@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path";
-const secure = require("express-sslify");
+import secure from "express-sslify";
 
 const app = express();
 
