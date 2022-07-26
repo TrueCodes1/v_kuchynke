@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "concurrently": "7.1.0"
+  },
   "scripts": {
     "server": "cd server && node index.js",
     "client": "cd client && npm run build",
