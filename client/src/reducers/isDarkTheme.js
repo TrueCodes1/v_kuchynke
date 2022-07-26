@@ -10,4 +10,4 @@ const darkThemeReducer = (state = true, action) => {
   }
 };
 
-export default darkThemeReducer;
+export default { darkThemeReducer };

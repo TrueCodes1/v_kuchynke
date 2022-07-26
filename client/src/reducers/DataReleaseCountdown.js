@@ -18,4 +18,4 @@ const releaseCountdownReducer = (
   }
 };
 
-export default releaseCountdownReducer;
+export default { releaseCountdownReducer };
