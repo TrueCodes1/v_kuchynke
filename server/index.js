@@ -13,6 +13,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 if (process.env.PORT) {
+  console.log("PORT EXISTS");
   app.use(
     secure.HTTPS({
       trustProtoHeader: true,
