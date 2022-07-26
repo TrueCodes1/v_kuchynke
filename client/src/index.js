@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import HttpsRedirect from "react-https-redirect";
 // REDUX RELATED IMPORTS
 import { Provider } from "react-redux";
 import { compose, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 // IMPORTING WHOLE APP COMPONENT
-import App from './App';
+import App from "./App";
 
 // IMPORTING REDUX MAIN REDUCER
 import mainReducer from "./store";
@@ -19,10 +20,11 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk))
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store} >
-    <App />
-  </Provider>
+  <HttpsRedirect>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </HttpsRedirect>
 );
-
