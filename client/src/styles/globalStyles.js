@@ -64,6 +64,12 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
+        &.theme-switch {
+
+            background: ${COLORS.SECONDARY};
+
+        }
+
     }
     
     /* FOR CLOSER EXPLANATION, SEE THE COMMENT ABOVE THE CLASS 'dark', RIGHT BEFORE
@@ -87,6 +93,12 @@ const GlobalStyle = createGlobalStyle`
             background: ${COLORS.SECONDARY};
             box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(204, 204, 204, 0.5), inset -6px 6px 12px rgba(204, 204, 204, 0.2), inset 6px -6px 12px rgba(204, 204, 204, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.9), inset 6px 6px 15px rgba(204, 204, 204, 0.9);
             color: ${COLORS.PRIMARY}
+        }
+
+        &.theme-switch {
+
+            background: ${COLORS.PRIMARY};
+
         }
 
     }

@@ -5,6 +5,7 @@ import styled from "styled-components";
 // IMPORTING COMPONENTS, TO WHICH THE STATES WILL BE
 // PASSED AS PROPS
 import Background from "../components/General/Background";
+import ThemeSwitch from "../components/General/ThemeSwitch";
 import Branding from "../components/ReleaseDate/Branding";
 import Counter from "../components/ReleaseDate/Counter";
 
@@ -40,6 +41,7 @@ export default function ReleaseDate() {
           dataReleaseCountdown={dataReleaseCountdown}
         />
       </Parent>
+      <ThemeSwitch isDarkTheme={isDarkTheme} />
     </>
   );
 }

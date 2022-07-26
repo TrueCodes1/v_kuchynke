@@ -45,15 +45,18 @@ const Parent = styled.div`
 const Counter = ({ isDarkTheme, dataReleaseCountdown }) => {
   const dispatch = useDispatch();
 
+  const updateCounter = () => {
+    let currentDifference = findCurrentDateDifference();
+    dispatch(updateDataReleaseCountdownCounter(currentDifference));
+  };
+
   useEffect(() => {
-    let currentDifference;
+    updateCounter();
+
     const updateCounterInterval = setInterval(() => {
-      clearInterval(updateCounterInterval);
-      currentDifference = undefined;
-      currentDifference = findCurrentDateDifference();
-      dispatch(updateDataReleaseCountdownCounter(currentDifference));
+      updateCounter();
     }, 1000);
-  });
+  }, []);
 
   return (
     <>

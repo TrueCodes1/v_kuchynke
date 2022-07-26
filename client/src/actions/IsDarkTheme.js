@@ -8,8 +8,10 @@ const darkTheme = (isDarkTheme) => {
   };
 };
 
-export const updateIsDarkTheme = (isDarkTheme) => {
+const updateIsDarkTheme = (isDarkTheme) => {
   return (dispatch) => {
     dispatch(darkTheme(isDarkTheme));
   };
 };
+
+export default updateIsDarkTheme;
