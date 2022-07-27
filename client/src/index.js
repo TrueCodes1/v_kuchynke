@@ -22,6 +22,10 @@ const store = createStore(
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  //TO-DO:
+  //
+  // THE HTTPSREDIRECT PARENT SHOULD BE REPLACED BY ANOTHER
+  // METHOD OF REDIRECTING VIA SERVER
   <HttpsRedirect>
     <Provider store={store}>
       <App />

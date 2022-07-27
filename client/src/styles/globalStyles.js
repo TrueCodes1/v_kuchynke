@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: ${FONT_FAMILIES.MAIN};
         user-select: none;
-
+        
     }
 
     .release-countdown-branding {
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     /* EVERY COMPONENT, THAT CHANGES ITS COLOR ONCE THE THEME IS SWITCHED

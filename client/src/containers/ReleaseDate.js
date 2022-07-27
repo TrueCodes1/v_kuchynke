@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 // IMPORTING COMPONENTS, TO WHICH THE STATES WILL BE
 // PASSED AS PROPS
-import Background from "../components/General/Background";
 import ThemeSwitch from "../components/General/ThemeSwitch";
 import Branding from "../components/ReleaseDate/Branding";
 import Counter from "../components/ReleaseDate/Counter";
@@ -13,6 +12,8 @@ import Counter from "../components/ReleaseDate/Counter";
 // IS CREATED, IT IS ONLY THE PARENT FOR THE IMPORTED COMPONENTS
 const Parent = styled.div`
   position: absolute;
+  min-width: 100vw;
+  max-width: 100vw;
   left: 0;
   right: 0;
   top: 0;
@@ -22,6 +23,7 @@ const Parent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 export default function ReleaseDate() {
@@ -33,7 +35,6 @@ export default function ReleaseDate() {
 
   return (
     <>
-      <Background isDarkTheme={isDarkTheme} />
       <Parent>
         <Branding isDarkTheme={isDarkTheme} />
         <Counter
