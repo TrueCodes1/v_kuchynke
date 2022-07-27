@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 // IMPORTING COMPONENTS, TO WHICH THE STATES WILL BE
 // PASSED AS PROPS
-import ThemeSwitch from "../components/General/ThemeSwitch";
 import Branding from "../components/ReleaseDate/Branding";
 import Counter from "../components/ReleaseDate/Counter";
 
@@ -23,7 +22,7 @@ const Parent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 export default function ReleaseDate() {
@@ -42,7 +41,6 @@ export default function ReleaseDate() {
           dataReleaseCountdown={dataReleaseCountdown}
         />
       </Parent>
-      <ThemeSwitch isDarkTheme={isDarkTheme} />
     </>
   );
 }

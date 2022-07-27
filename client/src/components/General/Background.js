@@ -12,8 +12,9 @@ import {
 
 // STYLED COMPONENTS
 const Parent = styled.div`
-  position: absolute;
+  position: fixed;
   min-width: 100vw;
+  left: 0;
   min-height: 100vh;
   height: fit-content;
 `;

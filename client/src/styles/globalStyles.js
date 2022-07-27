@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     /* EVERY COMPONENT, THAT CHANGES ITS COLOR ONCE THE THEME IS SWITCHED

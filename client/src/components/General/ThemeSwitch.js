@@ -28,7 +28,8 @@ const Parent = styled.div`
   min-height: 50px;
   min-height: 50px;
   border-radius: 100px 0 0 100px;
-  position: absolute;
+  position: fixed;
+  z-index: 90;
   top: 50px;
   right: 0;
   display: flex;
