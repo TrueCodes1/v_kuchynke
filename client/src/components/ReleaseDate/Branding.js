@@ -29,11 +29,13 @@ const Branding = ({ isDarkTheme }) => {
   return (
     <>
       <Parent
+        data-testid="branding-parent"
         className={`
             release-countdown-branding
             ${isDarkTheme === true ? "dark" : "light"}
         `}
       >
+        {/* STRINGS SHOULD BE LOADED INSTEAD OF HARDOCING, THE BEST SOLUTION FOR THIS TO BE CHOSEN TILL OCTOBER  */}
         V Kuchynke
       </Parent>
     </>

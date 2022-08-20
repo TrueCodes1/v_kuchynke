@@ -1,5 +1,7 @@
+// GLOBAL IMPORTS
 import React from "react";
 import styled from "styled-components";
+
 // IMPORTING REDUX RELATED STUFF
 import { useDispatch } from "react-redux";
 
@@ -81,14 +83,17 @@ const ThemeSwitch = ({ isDarkTheme }) => {
   return (
     <>
       <Parent
+        data-testid="theme-switch-parent"
         className={`theme-switch ${isDarkTheme === true ? "dark" : "light"}`}
         onClick={changeTheme}
       >
         <ImageChild
+          data-testid="theme-switch-left"
           className={`left ${isDarkTheme === true ? "leave" : ""}`}
           src={moonImage}
         />
         <ImageChild
+          data-testid="theme-switch-right"
           className={`right ${isDarkTheme === true ? "" : "leave"}`}
           src={sunImage}
         />

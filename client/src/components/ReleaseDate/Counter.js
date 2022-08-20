@@ -60,7 +60,7 @@ const Counter = ({ isDarkTheme, dataReleaseCountdown }) => {
 
   return (
     <>
-      <Parent>
+      <Parent data-testid="counter-parent">
         <CounterChild
           isDarkTheme={isDarkTheme}
           content={dataReleaseCountdown.days}

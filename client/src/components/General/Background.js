@@ -23,6 +23,7 @@ const Background = ({ isDarkTheme }) => {
   return (
     <>
       <Parent
+        data-testid="background-parent"
         className={`
             background
             ${isDarkTheme === true ? "dark" : "light"}
