@@ -1,11 +1,9 @@
-// containers
-import BackgroundContainer from "../containers/BackgroundContainer";
+// containers imports
 import ReleaseDate from "../containers/ReleaseDate";
 
 const Countdown = () => {
   return (
     <>
-      <BackgroundContainer />
       <ReleaseDate />
     </>
   );

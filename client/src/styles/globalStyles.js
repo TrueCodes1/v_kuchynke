@@ -1,6 +1,7 @@
+// global imports
 import { createGlobalStyle } from "styled-components";
 
-// IMPPORTING STYLES VARIABLES
+// styles imports
 import {
   COLORS,
   FONT_FAMILIES,
@@ -25,10 +26,6 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
-    body {
-        overflow-x: hidden;
-    }
-
     /* EVERY COMPONENT, THAT CHANGES ITS COLOR ONCE THE THEME IS SWITCHED
     DOES SO WITH A SMOOTH TRANSITION BETWEEN THE COLORS */
     &.dark,
@@ -40,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* THIS CLASS APPLIES TO ALL THE COMPONENTS THAT CARRY THE CLASS 'dark' ONCE
     THE THEME OF THE APP IS SWITCHED, BUT DIFFERENTLY FOR SPECIFIC COMPONENTS
-    (E.G. BACKGROUND CHAANGES ITS BACKGROUND COLOR, TEXT CHANGES ITS COLOR, ...).
+    (E.G. BACKGROUND CHANGES ITS BACKGROUND COLOR, TEXT CHANGES ITS COLOR, ...).
     THIS ALL WORKS SAME WITH CLASS 'light', JUST WITH DIFFERENT COLOR */
     &.dark {
 
