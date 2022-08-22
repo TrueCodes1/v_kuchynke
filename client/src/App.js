@@ -1,16 +1,14 @@
-// IMPORTING GLOBAL STYLES
+// styles
 import GlobalStyle from "./styles/globalStyles";
 
-// IMPORTING STATEFUL CONTAINERS
-import ReleaseDate from "./containers/ReleaseDate";
-import BackgroundContainer from "./containers/BackgroundContainer";
+// pages
+import Countdown from "./pages/Countdown";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <BackgroundContainer />
-      <ReleaseDate />
+      <Countdown />
     </>
   );
 };

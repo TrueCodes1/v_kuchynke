@@ -3,12 +3,7 @@ import styled from "styled-components";
 
 // IMPORTING COMMON STYLESHEETS, VARIABLES
 import "../../styles/fonts/fonts.sass";
-import {
-  FONT_SIZES,
-  FONT_FAMILIES,
-  COLORS,
-  BREAKPOINTS,
-} from "../../styles/variables";
+import { FONT_SIZES, BREAKPOINTS } from "../../styles/variables";
 
 // IMPORTING STRINGS OF THE WHOLE APP
 import strings from "../../constants/strings";
@@ -78,13 +73,16 @@ const CounterChild = ({ content, isDarkTheme, type }) => {
   return (
     <>
       <Parent
+        data-testid="counter-child"
         className={`
             release-countdown-counter-child
             ${isDarkTheme === true ? "dark" : "light"}
         `}
       >
-        <Number>{content.number}</Number>
-        <Unit>{strings.RELEASE_DATE[type][content.type]}</Unit>
+        <Number data-testid="counter-child-number">{content.number}</Number>
+        <Unit data-testid="counter-child-text">
+          {strings.RELEASE_DATE[type][content.type]}
+        </Unit>
       </Parent>
     </>
   );
