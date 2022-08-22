@@ -1,41 +1,22 @@
+// global imports
+import classNames from "classnames";
 import React from "react";
-import styled from "styled-components";
 
-// IMPORTING COMMON STYLESHEETS, VARIABLES
-import "../../styles/fonts/fonts.sass";
-import {
-  FONT_SIZES,
-  FONT_FAMILIES,
-  COLORS,
-  BREAKPOINTS,
-} from "../../styles/variables";
-
-// STYLED COMPONENTS
-const Parent = styled.h1`
-  @media only screen and (max-width: ${BREAKPOINTS.MOBILE}) {
-    font-size: ${FONT_SIZES.MAIN_BRANDING};
-  }
-
-  @media only screen and (min-width: calc(${BREAKPOINTS.MOBILE} + 1px)) and (max-width: ${BREAKPOINTS.TABLET}) {
-    font-size: ${FONT_SIZES.MAIN_BRANDING};
-  }
-
-  @media only screen and (min-width: calc(${BREAKPOINTS.TABLET} + 1px)) {
-    font-size: ${FONT_SIZES.MAIN_BRANDING};
-  } ;
-`;
+// styled components imports
+import { Parent } from "../../styled_components/release_date/Branding";
 
 const Branding = ({ isDarkTheme }) => {
   return (
     <>
       <Parent
         data-testid="branding-parent"
-        className={`
-            release-countdown-branding
-            ${isDarkTheme === true ? "dark" : "light"}
-        `}
+        className={classNames(
+          { "release-countdown-branding": true },
+          { dark: isDarkTheme === true },
+          { light: isDarkTheme !== true }
+        )}
       >
-        {/* STRINGS SHOULD BE LOADED INSTEAD OF HARDOCING, THE BEST SOLUTION FOR THIS TO BE CHOSEN TILL OCTOBER  */}
+        {/* String will be loaded instead of hardcoding. The best solution to be chosen by October.  */}
         V Kuchynke
       </Parent>
     </>

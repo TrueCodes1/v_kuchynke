@@ -1,46 +1,20 @@
+// global imports
 import React, { useEffect } from "react";
-import styled from "styled-components";
-// IMPORTING REDUX-RELATED STUFF
+
+// redux related stuff imports
 import { useDispatch } from "react-redux";
 
-// IMPORTING CHILDREN COMPONENTS
-import CounterChild from "./CounterChild";
-
-// IMPORTING COMMON STYLESHEETS, VARIABLES
-import "../../styles/fonts/fonts.sass";
-import {
-  FONT_SIZES,
-  FONT_FAMILIES,
-  COLORS,
-  BREAKPOINTS,
-} from "../../styles/variables";
-
-// IMPORTING REDUX FUNCTIONS FOR DISPATCH
+// redux functions for dispatch imports
 import updateDataReleaseCountdownCounter from "../../actions/DataReleaseCountdown";
 
-// IMPORTING OTHER FUNCTIONS
+// components imports
+import CounterChild from "./CounterChild";
+
+// other functions imports
 import findCurrentDateDifference from "../../functions/ReleaseDate/findCurrentDifference";
 
-// STYLED COMPONENTS
-const Parent = styled.div`
-  @media only screen and (max-width: ${BREAKPOINTS.MOBILE}) {
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-top: 40px;
-  }
-  @media only screen and (min-width: calc(${BREAKPOINTS.MOBILE} + 1px)) and (max-width: ${BREAKPOINTS.TABLET}) {
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-top: 40px;
-  }
-  @media only screen and (min-width: calc(${BREAKPOINTS.TABLET} + 1px)) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-  } ;
-`;
+// styled components
+import { Parent } from "../../styled_components/release_date/Counter";
 
 const Counter = ({ isDarkTheme, dataReleaseCountdown }) => {
   const dispatch = useDispatch();

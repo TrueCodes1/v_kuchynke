@@ -47,7 +47,8 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
-        &.release-countdown-branding {
+        &.release-countdown-branding,
+        &.navbar {
 
             color: ${COLORS.SECONDARY};
 

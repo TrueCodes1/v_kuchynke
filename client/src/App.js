@@ -9,6 +9,8 @@ import GlobalStyle from "./styles/globalStyles";
 // why in App.js is a styled component imported
 import { StyledBackground } from "./styled_components/background/Background";
 
+// stable components imports
+import Navbar from "./components/Navbar/Navbar";
 import ThemeSwitch from "./components/General/ThemeSwitch";
 
 // pages
@@ -21,6 +23,7 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyle />
       <StyledBackground
         className={classNames(
           { background: true },
@@ -28,7 +31,7 @@ const App = () => {
           { light: isDarkTheme !== true }
         )}
       >
-        <GlobalStyle />
+        <Navbar isDarkTheme={isDarkTheme} />
         <ThemeSwitch isDarkTheme={isDarkTheme} />
         <Countdown />
         <Home />

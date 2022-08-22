@@ -1,4 +1,5 @@
 // global imports
+import classNames from "classnames";
 import React from "react";
 
 // redux related stuff imports
@@ -28,17 +29,27 @@ const ThemeSwitch = ({ isDarkTheme }) => {
     <>
       <Parent
         data-testid="theme-switch-parent"
-        className={`theme-switch ${isDarkTheme === true ? "dark" : "light"}`}
+        className={classNames(
+          { "theme-switch": true },
+          { dark: isDarkTheme === true },
+          { light: isDarkTheme !== true }
+        )}
         onClick={changeTheme}
       >
         <ImageChild
           data-testid="theme-switch-left"
-          className={`left ${isDarkTheme === true ? "leave" : ""}`}
+          className={classNames(
+            { left: true },
+            { leave: isDarkTheme === true }
+          )}
           src={moonImage}
         />
         <ImageChild
           data-testid="theme-switch-right"
-          className={`right ${isDarkTheme === true ? "" : "leave"}`}
+          className={classNames(
+            { right: true },
+            { leave: isDarkTheme !== true }
+          )}
           src={sunImage}
         />
       </Parent>
