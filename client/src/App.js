@@ -46,7 +46,7 @@ const App = () => {
         )}`}
       >
         <Navbar isDarkTheme={isDarkTheme} />
-        <Footer />
+        <Footer isDarkTheme={isDarkTheme} />
         {/* <Countdown isDarkTheme={isDarkTheme} /> */}
         <Routes>
           <Route path="/about" element={<About />} />

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 // assets imports
 import arrowImg from "../../assets/General/arrow_down.svg";
+import arrowImgDark from "../../assets/General/arrow_down_dark.svg";
 
 // styled components imports
 import {
@@ -15,11 +16,11 @@ import {
   Parent,
 } from "../../styledComponents/General/CookiesPopUp";
 
-const CookiesPopUp = () => {
+const CookiesPopUp = ({ isDarkTheme }) => {
   return (
     <>
       <Parent className="cookies-parent">
-        <ArrowImage src={arrowImg} />
+        <ArrowImage src={isDarkTheme ? arrowImg : arrowImgDark} />
         <Background className="cookies-popup-background" />
         <Content className="cookies-popup-content">
           <CookiesHeader className="cookies-popup-text">

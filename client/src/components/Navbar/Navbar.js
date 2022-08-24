@@ -17,16 +17,11 @@ import {
 const Navbar = ({ isDarkTheme, isUserLoggedIn, isChristmasTheme }) => {
   return (
     <>
-      <StyledNavbar
-        className={`navbar ${classNames(
-          { dark: isDarkTheme === true },
-          { light: isDarkTheme !== true }
-        )}`}
-      >
+      <StyledNavbar className="navbar">
         <Link to="/">
-          <BrandingHeart />
+          <BrandingHeart isDarkTheme={isDarkTheme} />
         </Link>
-        <ChristmasLights />
+        <ChristmasLights isDarkTheme={isDarkTheme} />
         <ThemeSwitch isDarkTheme={isDarkTheme} />
         <NavList>
           <Link to="/feed">

@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     &.light,
     * {
         
-        transition: all .5s ease;
+        transition: all .25s ease;
 
     }
 
@@ -50,10 +50,6 @@ const GlobalStyle = createGlobalStyle`
         .cookies-popup-background {
 
             background: ${COLORS.PRIMARY};
-
-            &.cookies-popup-background {
-                opacity: .59;
-            }
 
         }
 
@@ -69,7 +65,8 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
-        .question {
+        .question,
+        .question-opened-content {
             color: ${COLORS.PRIMARY};
             background: ${COLORS.SECONDARY};
         }
@@ -88,7 +85,6 @@ const GlobalStyle = createGlobalStyle`
             &.large {
                 box-shadow: -11px 11px 22px rgba(74, 52, 65, 0.2), 11px -11px 22px rgba(74, 52, 65, 0.2), -11px -11px 22px rgba(122, 84, 105, 0.9), 11px 11px 28px rgba(74, 52, 65, 0.9), inset 1px 1px 2px rgba(122, 84, 105, 0.3), inset -1px -1px 2px rgba(74, 52, 65, 0.5);
             }
-
         }
 
         &.theme-switch {
@@ -97,13 +93,22 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
+        .question-choice {
+            border: 2px solid ${COLORS.PRIMARY}
+        }
+
+        .question-suggestion-input {
+            background: ${COLORS.SECONDARY};
+            box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(199, 199, 199, 0.5), inset -8px 8px 16px rgba(199, 199, 199, 0.2), inset 8px -8px 16px rgba(199, 199, 199, 0.2), inset -8px -8px 16px rgba(255, 255, 255, 0.9), inset 8px 8px 20px rgba(199, 199, 199, 0.9);
+        }
+
     }
     
     /* FOR CLOSER EXPLANATION, SEE THE COMMENT ABOVE THE CLASS 'dark', RIGHT BEFORE
     THIS CLASS */
     &.light {
 
-        &.background {
+        &.background{
 
             background: ${COLORS.SECONDARY};
 
@@ -114,7 +119,6 @@ const GlobalStyle = createGlobalStyle`
         a, 
         .branding-home-page,
         button,
-        .cookies-popup-content,
         .footer-text {
 
             color: ${COLORS.PRIMARY};
@@ -133,10 +137,32 @@ const GlobalStyle = createGlobalStyle`
             color: ${COLORS.PRIMARY}
         }
 
-        &.theme-switch {
+        
+        button {
+
+            background: ${COLORS.SECONDARY};
+            &.large {
+                box-shadow: -11px 11px 22px rgba(197, 197, 197, 0.2), 11px -11px 22px rgba(197, 197, 197, 0.2), -11px -11px 22px rgba(255, 255, 255, 0.9), 11px 11px 28px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(197, 197, 197, 0.9), inset -1px -1px 2px rgba(197, 197, 197, 0.9);
+            }
+
+        }
+
+        &.theme-switch  {
 
             background: ${COLORS.PRIMARY};
 
+        }
+        .cookies-popup-background  {
+
+            background: ${COLORS.PRIMARY};
+            opacity: .75;
+
+        }
+        
+        .cookies-popup-content {
+
+                color: ${COLORS.SECONDARY}
+        
         }
 
     }
