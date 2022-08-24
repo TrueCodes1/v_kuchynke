@@ -23,7 +23,9 @@ const Navbar = ({ isDarkTheme, isUserLoggedIn, isChristmasTheme }) => {
           { light: isDarkTheme !== true }
         )}`}
       >
-        <BrandingHeart />
+        <Link to="/">
+          <BrandingHeart />
+        </Link>
         <ChristmasLights />
         <ThemeSwitch isDarkTheme={isDarkTheme} />
         <NavList>

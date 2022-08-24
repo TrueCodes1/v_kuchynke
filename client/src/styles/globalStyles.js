@@ -33,7 +33,8 @@ const GlobalStyle = createGlobalStyle`
     /* EVERY COMPONENT, THAT CHANGES ITS COLOR ONCE THE THEME IS SWITCHED
     DOES SO WITH A SMOOTH TRANSITION BETWEEN THE COLORS */
     &.dark,
-    &.light {
+    &.light,
+    * {
         
         transition: all .5s ease;
 
@@ -45,18 +46,32 @@ const GlobalStyle = createGlobalStyle`
     THIS ALL WORKS SAME WITH CLASS 'light', JUST WITH DIFFERENT COLOR */
     &.dark {
 
-        &.background {
+        &.background,
+        .cookies-popup-background {
 
             background: ${COLORS.PRIMARY};
+
+            &.cookies-popup-background {
+                opacity: .59;
+            }
 
         }
 
         &.release-countdown-branding,
         &.navbar,
-        a {
+        a,
+        .branding-home-page,
+        button,
+        .cookies-popup-content,
+        .footer-text {
 
             color: ${COLORS.SECONDARY};
 
+        }
+
+        .question {
+            color: ${COLORS.PRIMARY};
+            background: ${COLORS.SECONDARY};
         }
 
         &.release-countdown-counter-child {
@@ -64,6 +79,15 @@ const GlobalStyle = createGlobalStyle`
             background: ${COLORS.PRIMARY};
             box-shadow: 1px 1px 2px rgba(116, 80, 100, 0.3), -1px -1px 2px rgba(80, 56, 70, 0.5), inset -10px 10px 20px rgba(80, 56, 70, 0.2), inset 10px -10px 20px rgba(80, 56, 70, 0.2), inset -10px -10px 20px rgba(116, 80, 100, 0.9), inset 10px 10px 25px rgba(80, 56, 70, 0.9);
             color: ${COLORS.SECONDARY}
+
+        }
+
+        button {
+
+            background: ${COLORS.PRIMARY};
+            &.large {
+                box-shadow: -11px 11px 22px rgba(74, 52, 65, 0.2), 11px -11px 22px rgba(74, 52, 65, 0.2), -11px -11px 22px rgba(122, 84, 105, 0.9), 11px 11px 28px rgba(74, 52, 65, 0.9), inset 1px 1px 2px rgba(122, 84, 105, 0.3), inset -1px -1px 2px rgba(74, 52, 65, 0.5);
+            }
 
         }
 
@@ -87,10 +111,19 @@ const GlobalStyle = createGlobalStyle`
 
         &.release-countdown-branding, 
         &.navbar,
-        a {
+        a, 
+        .branding-home-page,
+        button,
+        .cookies-popup-content,
+        .footer-text {
 
             color: ${COLORS.PRIMARY};
 
+        }
+
+        .question {
+            color: ${COLORS.SECONDARY};
+            background: ${COLORS.PRIMARY};
         }
 
         &.release-countdown-counter-child {

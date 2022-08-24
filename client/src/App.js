@@ -12,6 +12,7 @@ import { StyledBackground } from "./styledComponents/Background/Background";
 
 // stable components imports
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 // pages
 import About from "./pages/About/About";
@@ -45,7 +46,8 @@ const App = () => {
         )}`}
       >
         <Navbar isDarkTheme={isDarkTheme} />
-        <Countdown isDarkTheme={isDarkTheme} />
+        <Footer />
+        {/* <Countdown isDarkTheme={isDarkTheme} /> */}
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />

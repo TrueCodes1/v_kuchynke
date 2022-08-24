@@ -5,7 +5,7 @@ export const COLORS = {
 };
 
 export const FONT_SIZES = {
-  MAIN_BRANDING: "55px",
+  MAIN_BRANDING: "60px",
   ULTRA_GIANT: "46px",
   GIANT: "36px",
   LARGE: "28px",
