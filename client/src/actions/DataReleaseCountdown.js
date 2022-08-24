@@ -1,9 +1,9 @@
 // IMPORT REDUX ACTION TYPES
-import reduxActionsStates from "../reduxActionsStates/reduxActionsStates";
+import reduxActionsTypes from "../reduxActionsTypes/reduxActionsTypes";
 
 const releaseCountdownCounter = (dataReleaseCountdownCounter) => {
   return {
-    type: reduxActionsStates.updateReleaseCountdown,
+    type: reduxActionsTypes.updateReleaseCountdown,
     payload: dataReleaseCountdownCounter,
   };
 };

@@ -26,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
+    a {
+        text-decoration: none
+    }
+
     /* EVERY COMPONENT, THAT CHANGES ITS COLOR ONCE THE THEME IS SWITCHED
     DOES SO WITH A SMOOTH TRANSITION BETWEEN THE COLORS */
     &.dark,
@@ -48,7 +52,8 @@ const GlobalStyle = createGlobalStyle`
         }
 
         &.release-countdown-branding,
-        &.navbar {
+        &.navbar,
+        a {
 
             color: ${COLORS.SECONDARY};
 
@@ -80,7 +85,9 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
-        &.release-countdown-branding {
+        &.release-countdown-branding, 
+        &.navbar,
+        a {
 
             color: ${COLORS.PRIMARY};
 

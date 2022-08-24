@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 
 // IMPORTING COMPONENTS TO TEST
-import ThemeSwitch from "../../components/General/ThemeSwitch";
+import ThemeSwitch from "../../components/Navbar/ThemeSwitch";
 
 // TESTS
 test("it renders correctly with correct classes of parent and 2 children", () => {

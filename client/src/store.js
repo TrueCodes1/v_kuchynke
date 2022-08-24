@@ -1,13 +1,11 @@
+// global imports
 import { combineReducers } from "redux";
 
-// IMPORTING REDUX REDUCERS
-// NOTE THAT THE NAMES OF IMPORTS ARE NOT THE SAME AS THE EXPORTS IN
-// THE REDUCERS
-import darkThemeReducer from "./redux_reducers/IsDarkTheme";
-import countdownReducer from "./redux_reducers/DataReleaseCountdown";
+// Redux reducers imports
+import darkThemeReducer from "./reduxReducers/isDarkTheme";
+import countdownReducer from "./reduxReducers/dataReleaseCountdown";
 
-// EXPORTING COMBINED REDUCER THAT HOLDS ALL
-// THE STATES OF THE WHOLE APP
+// combined reducer holding the state of whole app
 export default combineReducers({
   isDarkTheme: darkThemeReducer.darkThemeReducer,
   dataReleaseCountdown: countdownReducer.releaseCountdownReducer,

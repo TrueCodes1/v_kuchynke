@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import HttpsRedirect from "react-https-redirect";
-// REDUX RELATED IMPORTS
+import { BrowserRouter } from "react-router-dom";
+// redux related imports
 import { Provider } from "react-redux";
 import { compose, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
@@ -24,11 +25,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //TO-DO:
   //
-  // THE HTTPSREDIRECT PARENT SHOULD BE REPLACED BY ANOTHER
-  // METHOD OF REDIRECTING VIA SERVER
-  <HttpsRedirect>
-    <Provider store={store}>
+  // the https wrapper should be replaced by server side redirecting
+  //<HttpsRedirect>
+  //</HttpsRedirect>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
-  </HttpsRedirect>
+    </BrowserRouter>
+  </Provider>
+  //{/* </HttpsRedirect> */}
 );
