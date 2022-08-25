@@ -16,7 +16,7 @@ const Home = () => {
       <Button size="large" text="tip na dnes" link="/daily-tip" />
       <CookiesPopUp isDarkTheme={isDarkTheme} />
       <ChristmasTree />
-      <Question />
+      <Question isDarkTheme={isDarkTheme} />
       <WelcomeText />
     </>
   );

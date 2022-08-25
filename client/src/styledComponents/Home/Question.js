@@ -92,6 +92,7 @@ export const Choice = styled.div`
   justify-content: center;
   padding: 20px;
   margin: 40px 20px 30px 20px;
+  cursor: pointer;
 `;
 
 export const OpenedSuggestionWrapper = styled.div``;
@@ -110,6 +111,7 @@ export const OpenedSuggestionInput = styled.textarea`
   height: 6em;
   width: 100%;
   resize: none;
+  font-size: ${FONT_SIZES.MEDIUM};
 `;
 
 export const OpenedClose = styled.img`

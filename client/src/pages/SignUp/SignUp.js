@@ -1,4 +1,8 @@
+// containers imports
+import SignUpContainer from "../../containers/SignUp/SignUp";
+
 const SignUp = () => {
-  return <>SignUp</>;
+  return <SignUpContainer />;
 };
+
 export default SignUp;

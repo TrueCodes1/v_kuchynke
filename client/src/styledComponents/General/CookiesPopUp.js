@@ -53,4 +53,6 @@ export const ArrowImage = styled.img`
   position: absolute;
   right: 30px;
   top: 40px;
+  cursor: pointer;
+  z-index: 1001;
 `;

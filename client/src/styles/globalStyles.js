@@ -26,10 +26,6 @@ const GlobalStyle = createGlobalStyle`
 
     }
 
-    a {
-        text-decoration: none
-    }
-
     /* EVERY COMPONENT, THAT CHANGES ITS COLOR ONCE THE THEME IS SWITCHED
     DOES SO WITH A SMOOTH TRANSITION BETWEEN THE COLORS */
     &.dark,
@@ -38,6 +34,16 @@ const GlobalStyle = createGlobalStyle`
         
         transition: all .25s ease;
 
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .cookies-popup-link {
+        padding: 0 1.5px;
+        border-bottom: 2px solid transparent;
+        transition: .15s ease;
     }
 
     /* THIS CLASS APPLIES TO ALL THE COMPONENTS THAT CARRY THE CLASS 'dark' ONCE
@@ -94,14 +100,30 @@ const GlobalStyle = createGlobalStyle`
         }
 
         .question-choice {
-            border: 2px solid ${COLORS.PRIMARY}
+            border: 2px solid ${COLORS.PRIMARY};
+
+            &:hover {
+                border: 2px solid ${COLORS.PRIMARY};
+                background: ${COLORS.PRIMARY};
+                color: ${COLORS.SECONDARY};
+                transition: .1s ease;
+            }
         }
 
         .question-suggestion-input {
+            color: ${COLORS.PRIMARY};
             background: ${COLORS.SECONDARY};
             box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(199, 199, 199, 0.5), inset -8px 8px 16px rgba(199, 199, 199, 0.2), inset 8px -8px 16px rgba(199, 199, 199, 0.2), inset -8px -8px 16px rgba(255, 255, 255, 0.9), inset 8px 8px 20px rgba(199, 199, 199, 0.9);
         }
+        
+        .cookies-popup-link {
+            color: ${COLORS.SECONDARY};
 
+            &:hover {
+                border-bottom: 2px solid ${COLORS.SECONDARY};
+                transition: .15s ease
+            }
+        }
     }
     
     /* FOR CLOSER EXPLANATION, SEE THE COMMENT ABOVE THE CLASS 'dark', RIGHT BEFORE
@@ -125,7 +147,8 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
-        .question {
+        .question,
+        .question-opened-content {
             color: ${COLORS.SECONDARY};
             background: ${COLORS.PRIMARY};
         }
@@ -160,11 +183,34 @@ const GlobalStyle = createGlobalStyle`
         }
         
         .cookies-popup-content {
-
-                color: ${COLORS.SECONDARY}
-        
+            color: ${COLORS.SECONDARY}
         }
 
+        .question-choice {
+            border: 2px solid ${COLORS.SECONDARY};
+            
+            &:hover {
+                border: 2px solid ${COLORS.SECONDARY};
+                background: ${COLORS.SECONDARY};
+                color: ${COLORS.PRIMARY};
+                transition: .1s ease;
+            }
+        }
+
+        .question-suggestion-input {
+            color: ${COLORS.SECONDARY};
+            background: ${COLORS.PRIMARY};
+            box-shadow: 1px 1px 2px rgba(117, 81, 101, 0.3), -1px -1px 2px rgba(79, 55, 69, 0.5), inset -7px 7px 14px rgba(79, 55, 69, 0.2), inset 7px -7px 14px rgba(79, 55, 69, 0.2), inset -7px -7px 14px rgba(117, 81, 101, 0.9), inset 7px 7px 18px rgba(79, 55, 69, 0.9);
+        }
+        
+        .cookies-popup-link {
+            color: ${COLORS.SECONDARY};
+            
+            &:hover {
+                border-bottom: 2px solid ${COLORS.SECONDARY};
+                transition: .15s ease
+            }
+        }
     }
 
 `;

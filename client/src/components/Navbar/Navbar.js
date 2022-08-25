@@ -1,6 +1,9 @@
 // global imports
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+// constants imports
+import strings from "../../constants/strings";
 
 // components imports
 import BrandingHeart from "./BrandingHeart";
@@ -9,12 +12,15 @@ import ThemeSwitch from "./ThemeSwitch";
 
 // styled components
 import {
+  CurrentUnderline,
   StyledNavbar,
   NavList,
   NavItem,
 } from "../../styledComponents/Navbar/Navbar";
 
 const Navbar = ({ isDarkTheme, isUserLoggedIn, isChristmasTheme }) => {
+  const location = useLocation();
+
   return (
     <>
       <StyledNavbar className="navbar">
@@ -24,18 +30,18 @@ const Navbar = ({ isDarkTheme, isUserLoggedIn, isChristmasTheme }) => {
         <ChristmasLights isDarkTheme={isDarkTheme} />
         <ThemeSwitch isDarkTheme={isDarkTheme} />
         <NavList>
-          <Link to="/feed">
-            <NavItem>inšpiruj sa priateľmi</NavItem>
-          </Link>
-          <Link to="/about">
-            <NavItem>kde to som?</NavItem>
-          </Link>
-          <Link to="sign-up">
-            <NavItem>zaregistruj aj mňa</NavItem>
-          </Link>
-          <Link to="log-in">
-            <NavItem>prihlás ma</NavItem>
-          </Link>
+          {strings.NAVBAR.USER_LOGGED_OUT.map((route) => (
+            <Link to={route.ROUTE} key={route.ROUTE}>
+              <NavItem>
+                {route.TEXT}
+                <CurrentUnderline
+                  className={
+                    location.pathname === route.ROUTE ? "visible" : "hidden"
+                  }
+                />
+              </NavItem>
+            </Link>
+          ))}
         </NavList>
       </StyledNavbar>
     </>
