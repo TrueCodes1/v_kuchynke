@@ -4,13 +4,18 @@ import reduxActionsTypes from "../reduxActionsTypes/reduxActionsTypes";
 const signUpForm = (
   state = {
     firstName: "",
+    isFirstNameCorrect: false,
     lastName: "",
+    isLastNameCorrect: false,
     email: "",
+    isEmailCorrect: false,
     password: "",
     passwordRepeat: "",
-    passwordStrength: "",
+    passwordStrength: 0,
     passwordsMatch: false,
     photo: "",
+    isReadyInPercentage: 0,
+    isSignUpFormReady: false,
   },
   action
 ) => {

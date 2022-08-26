@@ -35,9 +35,9 @@ const Navbar = ({ isDarkTheme, isUserLoggedIn, isChristmasTheme }) => {
               <NavItem>
                 {route.TEXT}
                 <CurrentUnderline
-                  className={
-                    location.pathname === route.ROUTE ? "visible" : "hidden"
-                  }
+                  className={`navbar-underline
+                    ${location.pathname === route.ROUTE ? "visible" : "hidden"}
+                  `}
                 />
               </NavItem>
             </Link>

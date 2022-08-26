@@ -21,4 +21,22 @@ export const LargeButton = styled.button`
   z-index: 1000;
 `;
 
-export const SmallButton = styled.button``;
+export const MidButton = styled.button`
+  font-size: ${FONT_SIZES.SMALL};
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 10px 40px;
+  width: 250px;
+  cursor: pointer;
+`;
+
+export const SmallButton = styled.button`
+  font-size: ${FONT_SIZES.MEDIUM};
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 10px 40px;
+  width: 170px;
+  cursor: pointer;
+`;

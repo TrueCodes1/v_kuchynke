@@ -28,10 +28,12 @@ root.render(
   // the https wrapper should be replaced by server side redirecting
   //<HttpsRedirect>
   //</HttpsRedirect>
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
   //{/* </HttpsRedirect> */}
 );

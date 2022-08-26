@@ -7,7 +7,20 @@ import updateDataSignUpForm from "../../actions/dataSignUpForm";
 
 // components imports
 import Input from "../General/Input";
-import PasswordStrength from "./PasswordStrength";
+import ProgressBar from "../General/ProgressBar";
+
+// styled components imports
+import { PasswordMatch } from "../../styledComponents/SignUp/SignUp";
+
+// functions imports
+import {
+  validateName,
+  validateEmail,
+  getPasswordStrength,
+  validatePasswordsMatch,
+  generalValidation,
+  getReadyPercentage,
+} from "../../functions/SignUp/SignUp";
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -15,51 +28,54 @@ const SignUpForm = () => {
 
   const {
     firstName,
+    isFirstNameCorrect,
     lastName,
+    isLastNameCorrect,
     email,
+    isEmailCorrect,
     password,
     passwordRepeat,
     passwordStrength,
     passwordsMatch,
+    readyInPercentage,
     photo,
   } = formData;
 
   const handleChange = (e) => {
-    const updatedFormData = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      passwordRepeat: "",
-      passwordStrength: "",
-      passwordsMatch: "",
-      photo: "",
-    };
     const { name, value } = e.target;
-    Object.keys(updatedFormData).forEach((key) =>
-      key === name
-        ? (updatedFormData[key] = value)
-        : (updatedFormData[key] = formData[key])
-    );
-    // checking and updating state of passwords match
-    if (
-      updatedFormData.password.length > 0 &&
-      updatedFormData.passwordRepeat.length > 0
-    ) {
-      updatedFormData.passwordsMatch =
-        updatedFormData.password === updatedFormData.passwordRepeat;
-    } else {
-      updatedFormData.passwordsMatch = false;
+    class UpdatedFormData {
+      constructor(name, value) {
+        this.firstName = name === "firstName" ? value : firstName;
+        this.isFirstNameCorrect = validateName(this.firstName);
+        this.lastName = name === "lastName" ? value : lastName;
+        this.isLastNameCorrect = validateName(this.lastName);
+        this.email = name === "email" ? value : email;
+        this.isEmailCorrect = validateEmail(this.email);
+        this.password = name === "password" ? value : password;
+        this.passwordRepeat =
+          name === "passwordRepeat" ? value : passwordRepeat;
+        this.passwordStrength = getPasswordStrength(this.password);
+        this.passwordsMatch = validatePasswordsMatch(
+          this.password,
+          this.passwordRepeat
+        );
+        this.isReadyInPercentage = getReadyPercentage(
+          this.isFirstNameCorrect,
+          this.isLastNameCorrect,
+          this.isEmailCorrect,
+          this.passwordsMatch
+        );
+        this.photo = photo;
+        this.isSignUpFormReady = generalValidation(
+          this.isFirstNameCorrect,
+          this.isLastNameCorrect,
+          this.isEmailCorrect,
+          this.passwordsMatch
+        );
+      }
     }
 
-    const passwordPercentageStrength =
-      new PasswordMeter.PasswordMeter().getResult(
-        updatedFormData.password
-      ).percent;
-
-    updatedFormData.passwordStrength = Math.round(
-      passwordPercentageStrength / 10
-    );
+    const updatedFormData = new UpdatedFormData(name, value);
 
     dispatch(updateDataSignUpForm(updatedFormData));
   };
@@ -72,6 +88,7 @@ const SignUpForm = () => {
         name="firstName"
         value={firstName}
         onChange={handleChange}
+        isCorrect={isFirstNameCorrect}
       />
       <Input
         type="text"
@@ -79,13 +96,15 @@ const SignUpForm = () => {
         name="lastName"
         value={lastName}
         onChange={handleChange}
+        isCorrect={isLastNameCorrect}
       />
       <Input
-        type="password"
+        type="text"
         placeholder="E-mail"
         name="email"
         value={email}
         onChange={handleChange}
+        isCorrect={isEmailCorrect}
       />
       <Input
         type="password"
@@ -94,7 +113,10 @@ const SignUpForm = () => {
         value={password}
         onChange={handleChange}
       />
-      <PasswordStrength strength={passwordStrength} />
+      <ProgressBar
+        text={`sila Tvojho hesla je ${passwordStrength}%`}
+        value={passwordStrength}
+      />
       <Input
         type="password"
         placeholder="Zopakuj heslo"
@@ -102,7 +124,9 @@ const SignUpForm = () => {
         value={passwordRepeat}
         onChange={handleChange}
       />
-      {passwordsMatch ? <p>heslá sa zhodujú</p> : <p>heslá sa nezhodujú</p>}
+      <PasswordMatch className="sign-up-password-match">
+        {passwordsMatch ? "heslá sa zhodujú" : "heslá sa nezhodujú"}
+      </PasswordMatch>
     </>
   );
 };

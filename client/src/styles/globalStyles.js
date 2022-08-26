@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     &.light,
     * {
         
-        transition: all .25s ease;
+        transition: all .15s ease;
 
     }
 
@@ -65,7 +65,11 @@ const GlobalStyle = createGlobalStyle`
         .branding-home-page,
         button,
         .cookies-popup-content,
-        .footer-text {
+        .footer-text,
+        .sign-up-header,
+        .sign-up-password-match,
+        .progress-bar-text,
+        .sign-up-cookies-text {
 
             color: ${COLORS.SECONDARY};
 
@@ -77,7 +81,8 @@ const GlobalStyle = createGlobalStyle`
             background: ${COLORS.SECONDARY};
         }
 
-        &.release-countdown-counter-child {
+        &.release-countdown-counter-child,
+        .sign-up-photo-wrapper {
 
             background: ${COLORS.PRIMARY};
             box-shadow: 1px 1px 2px rgba(116, 80, 100, 0.3), -1px -1px 2px rgba(80, 56, 70, 0.5), inset -10px 10px 20px rgba(80, 56, 70, 0.2), inset 10px -10px 20px rgba(80, 56, 70, 0.2), inset -10px -10px 20px rgba(116, 80, 100, 0.9), inset 10px 10px 25px rgba(80, 56, 70, 0.9);
@@ -93,7 +98,13 @@ const GlobalStyle = createGlobalStyle`
             }
         }
 
-        &.theme-switch {
+        .progress-bar-wrapper {
+            background: rgb(243, 243, 243, .25)
+        }
+
+        &.theme-switch,
+        .progress-bar-content,
+        .navbar-underline {
 
             background: ${COLORS.SECONDARY};
 
@@ -116,12 +127,24 @@ const GlobalStyle = createGlobalStyle`
             box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(199, 199, 199, 0.5), inset -8px 8px 16px rgba(199, 199, 199, 0.2), inset 8px -8px 16px rgba(199, 199, 199, 0.2), inset -8px -8px 16px rgba(255, 255, 255, 0.9), inset 8px 8px 20px rgba(199, 199, 199, 0.9);
         }
         
-        .cookies-popup-link {
+        .cookies-popup-link,
+        .sign-up-text-link {
             color: ${COLORS.SECONDARY};
 
             &:hover {
                 border-bottom: 2px solid ${COLORS.SECONDARY};
-                transition: .15s ease
+                transition: .05s ease
+            }
+        }
+
+        input{
+            box-shadow: 1px 1px 2px rgba(117, 81, 101, 0.3), -1px -1px 2px rgba(79, 55, 69, 0.5), inset -7px 7px 14px rgba(79, 55, 69, 0.2), inset 7px -7px 14px rgba(79, 55, 69, 0.2), inset -7px -7px 14px rgba(117, 81, 101, 0.9), inset 7px 7px 18px rgba(79, 55, 69, 0.9);
+            background: ${COLORS.PRIMARY};
+            color: ${COLORS.SECONDARY};
+
+            &::placeholder {
+                color: ${COLORS.SECONDARY};
+                opacity: .5;
             }
         }
     }
@@ -141,7 +164,11 @@ const GlobalStyle = createGlobalStyle`
         a, 
         .branding-home-page,
         button,
-        .footer-text {
+        .footer-text,
+        .sign-up-header,
+        .sign-up-password-match,
+        .progress-bar-text,
+        .sign-up-cookies-text {
 
             color: ${COLORS.PRIMARY};
 
@@ -153,7 +180,8 @@ const GlobalStyle = createGlobalStyle`
             background: ${COLORS.PRIMARY};
         }
 
-        &.release-countdown-counter-child {
+        &.release-countdown-counter-child,
+        .sign-up-photo-wrapper {
 
             background: ${COLORS.SECONDARY};
             box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(204, 204, 204, 0.5), inset -6px 6px 12px rgba(204, 204, 204, 0.2), inset 6px -6px 12px rgba(204, 204, 204, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.9), inset 6px 6px 15px rgba(204, 204, 204, 0.9);
@@ -170,7 +198,13 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
-        &.theme-switch  {
+        .progress-bar-wrapper {
+            background: rgb(98, 68, 85, .25)
+        }
+
+        &.theme-switch,
+        .progress-bar-content,
+        .navbar-underline  {
 
             background: ${COLORS.PRIMARY};
 
@@ -208,7 +242,25 @@ const GlobalStyle = createGlobalStyle`
             
             &:hover {
                 border-bottom: 2px solid ${COLORS.SECONDARY};
-                transition: .15s ease
+                transition: .05s ease
+            }
+        }
+        
+        .sign-up-text-link {
+            &:hover {
+                border-bottom: 2px solid ${COLORS.PRIMARY};
+                transition: .05s ease
+            }
+        }
+        
+        input{
+            box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(199, 199, 199, 0.5), inset -3px 3px 6px rgba(199, 199, 199, 0.2), inset 3px -3px 6px rgba(199, 199, 199, 0.2), inset -3px -3px 6px rgba(255, 255, 255, 0.9), inset 3px 3px 8px rgba(199, 199, 199, 0.9);
+            background: ${COLORS.SECONDARY};
+            color: ${COLORS.PRIMARY};
+
+            &::placeholder {
+                color: ${COLORS.PRIMARY};
+                opacity: .5;
             }
         }
     }

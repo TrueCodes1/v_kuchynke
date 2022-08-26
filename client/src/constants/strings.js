@@ -31,4 +31,9 @@ const NAVBAR = {
   ],
 };
 
-export default { RELEASE_DATE, NAVBAR };
+const COOKIES_TEXT = {
+  MAIN: `Tu V Kuchynke môžeš nájsť tieto 3 dôležité časti: Pravidlá používania siete V Kuchynke, Zásady ochrany osobných údajov a Pravidlá používania súborov cookies. Pre bližšie a rýchlejšie vysvetlenie ich významu klikni sem. Pre podrobné porozumenie, neváhaj navštíviť každú zo spomínaných častí.`,
+  SIDE: `DÔLEŽITÉ: Registrovaním sa V Kuchynke vyjadruješ svoj súhlas s Pravidlami používania siete V Kuchynke, Zásadami ochrany osobných údajov a Pravidlami používania súborov cookies.`,
+};
+
+export default { RELEASE_DATE, NAVBAR, COOKIES_TEXT };

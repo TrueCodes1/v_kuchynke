@@ -32,7 +32,6 @@ export const NavItem = styled.li`
 export const CurrentUnderline = styled.div`
   height: 5px;
   width: 60px;
-  background: white;
   margin-top: 10px;
   opacity: 0.15;
   border-radius: 100px;
