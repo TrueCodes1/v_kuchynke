@@ -9,19 +9,32 @@ import {
   SmallButton,
 } from "../../styledComponents/General/Button";
 
-const Button = ({ type, size, text, onClick }) => {
+const Button = ({
+  type,
+  size,
+  text,
+  onClick,
+  disabled,
+  classNames = undefined,
+}) => {
   return (
     <>
       {type === "link" && (
         <Link to={onClick}>
           {size === "small" && (
-            <SmallButton className="button button-small">{text}</SmallButton>
+            <SmallButton className={`button button-small ${classNames}`}>
+              {text}
+            </SmallButton>
           )}
           {size === "mid" && (
-            <MidButton className="button button-mid">{text}</MidButton>
+            <MidButton className={`button button-mid ${classNames}`}>
+              {text}
+            </MidButton>
           )}
           {size === "large" && (
-            <LargeButton className="button button-large">{text}</LargeButton>
+            <LargeButton className={`button button-large ${classNames}`}>
+              {text}
+            </LargeButton>
           )}
         </Link>
       )}
@@ -29,21 +42,27 @@ const Button = ({ type, size, text, onClick }) => {
         <>
           {size === "small" && (
             <SmallButton
-              className="button button-small"
+              className={`button button-small ${classNames}`}
               onClick={() => onClick()}
+              disabled={disabled && true}
             >
               {text}
             </SmallButton>
           )}
           {size === "mid" && (
-            <MidButton className="button button-mid" onClick={() => onClick()}>
+            <MidButton
+              className={`button button-mid ${classNames}`}
+              onClick={() => onClick()}
+              disabled={disabled && true}
+            >
               {text}
             </MidButton>
           )}
           {size === "large" && (
             <LargeButton
-              className="button button-large"
+              className={`button button-large ${classNames}`}
               onClick={() => onClick()}
+              disabled={disabled && true}
             >
               {text}
             </LargeButton>

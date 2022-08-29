@@ -9,7 +9,7 @@ const LeftPart = () => {
   return (
     <MainWrapper>
       <Header className="sign-up-header">
-        Nechceme od Teba žiadne nepotrebné informácie, len tieto 4:
+        Nechceme od Teba žiadne nepotrebné informácie, iba tieto 4:
       </Header>
       <SignUpForm />
     </MainWrapper>

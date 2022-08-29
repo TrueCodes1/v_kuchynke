@@ -14,31 +14,44 @@ import {
   MainWrapper,
   CookiesTextWrapper,
   CookiesText,
+  CookiesList,
   BottomWrapper,
 } from "../../styledComponents/SignUp/RightPart";
 
 const RightPart = () => {
-  const { isReadyInPercentage } = useSelector((state) => state.dataSignUpForm);
+  const { photo, isReadyInPercentage } = useSelector(
+    (state) => state.dataSignUpForm
+  );
 
   return (
     <MainWrapper>
       <CookiesTextWrapper>
         <CookiesText className="sign-up-cookies-text">
           Tu V Kuchynke môžeš nájsť tieto 3 dôležité časti:
-          <br />
-          <br />
-          <ul>
-            <li>Pravidlá používania siete V Kuchynke,</li>
-            <li>Zásady ochrany osobných údajov a</li>
-            <li>Pravidlá používania súborov cookies.</li>
-          </ul>
-          <br />
+        </CookiesText>
+        <CookiesList>
+          <li>
+            <Link to="/terms-of-use" className="sign-up-text-link">
+              Pravidlá používania siete V Kuchynke,
+            </Link>
+          </li>
+          <li>
+            <Link to="/privacy-policy" className="sign-up-text-link">
+              Zásady ochrany osobných údajov a
+            </Link>
+          </li>
+          <li>
+            <Link to="/cookies-policy" className="sign-up-text-link">
+              Pravidlá používania súborov cookies.
+            </Link>
+          </li>
+        </CookiesList>
+        <CookiesText className="sign-up-cookies-text">
           Pre bližšie a rýchlejšie vysvetlenie ich významu klikni sem. Pre
           podrobné porozumenie, neváhaj navštíviť každú zo spomínaných častí.
         </CookiesText>
-        <br />
-        <CookiesText className="sign-up-cookies-text">
-          DÔLEŽITÉ: Registrovaním sa V Kuchynke vyjadruješ svoj súhlas s&nbsp;
+        <CookiesText className="sign-up-cookies-text strong">
+          Registrovaním sa V Kuchynke vyjadruješ svoj súhlas s&nbsp;
           <Link to="/terms-of-use" className="sign-up-text-link">
             Pravidlami používania siete V Kuchynke
           </Link>
@@ -58,7 +71,16 @@ const RightPart = () => {
           text={`Tvoja registrácia je hotová na ${isReadyInPercentage}%`}
           value={isReadyInPercentage}
         />
-        <Button />
+        <Button
+          type="click"
+          size="large"
+          text={photo !== "" ? "Registruj ma" : "Registruj ma aj bez fotky"}
+          onClick={() => {
+            console.log("ready to registrate");
+          }}
+          disabled={isReadyInPercentage !== 100}
+          classNames="sign-up-button"
+        />
       </BottomWrapper>
     </MainWrapper>
   );

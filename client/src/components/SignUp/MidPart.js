@@ -1,11 +1,13 @@
 // global imports
 import { useSelector, useDispatch } from "react-redux";
+import { useRef } from "react";
 
 // Redux actions imports
 import updateDataSignUpForm from "../../actions/dataSignUpForm";
 
 // component imports
 import Button from "../General/Button";
+import Label from "../SignUp/FileInputLabel";
 
 // styled components imports
 import { useState } from "react";
@@ -40,6 +42,8 @@ const MidPart = () => {
   const [filesChosen, setFilesChosen] = useState(null);
   const [localPhotoUrl, setLocalPhotoUrl] = useState(null);
 
+  const fileInputElem = useRef();
+
   class UpdatedFormData {
     constructor(value) {
       this.firstName = firstName;
@@ -60,9 +64,13 @@ const MidPart = () => {
 
   // When file input changes, both states are updated.
   // The localPhotoUrl state updates the photo preview
-  const fileInputChangeHandler = (e) => {
+  const fileInputChangeHandler = async (e) => {
     setFilesChosen(e.target.files);
     setLocalPhotoUrl(URL.createObjectURL(e.target.files[0]));
+    // Resetting the file input value. This is done, so that when
+    // the user clear it themselves, they still can upload the same
+    // picture twice in the row.
+    e.target.value = null;
     // Updating Redux state of the whole sign up form with new photo.
     const updatedFormData = new UpdatedFormData(e.target.files[0]);
     dispatch(updateDataSignUpForm({ ...updatedFormData }));
@@ -80,50 +88,40 @@ const MidPart = () => {
     // empty photo field.
     const updatedFormData = new UpdatedFormData("");
     dispatch(updateDataSignUpForm({ ...updatedFormData }));
-    document.getElementById("sign-up-photo-form").reset();
-  };
-
-  // The setFilesChosen state updates and the file input is open again.
-  const chooseNewPhoto = () => {
-    setFilesChosen(null);
-    document.getElementById("sign-up-photo-input").click();
   };
 
   return (
     <MainWrapper>
-      <PhotoWrapper
-        className="sign-up-photo-wrapper"
-        onClick={() => document.getElementById("sign-up-photo-input").click()}
-      >
-        {localPhotoUrl ? (
-          <Photo src={localPhotoUrl} alt="Fotka, ktorú si si zvolil/a" />
-        ) : (
-          <TextContent>chcem pridať aj svoju fotku</TextContent>
-        )}
-      </PhotoWrapper>
-      {/* Form is used in here only to be able to empty the files list inside the file input */}
-      <form id="sign-up-photo-form">
-        <FileInput
-          type="file"
-          id="sign-up-photo-input"
-          accept="image/*"
-          onInput={(e) => {
-            fileInputChangeHandler(e);
-          }}
-        />
-      </form>
+      <label for="sign-up-photo-input">
+        <PhotoWrapper
+          className="sign-up-photo-wrapper"
+          // onClick={() => document.getElementById("sign-up-photo-input").click()}
+        >
+          {localPhotoUrl ? (
+            <Photo src={localPhotoUrl} alt="Fotka, ktorú si si zvolil/a" />
+          ) : (
+            <TextContent>chcem pridať aj svoju fotku</TextContent>
+          )}
+        </PhotoWrapper>
+      </label>
+      <FileInput
+        type="file"
+        name="sign-up-photo-input"
+        id="sign-up-photo-input"
+        ref={fileInputElem}
+        accept="image/*"
+        onInput={(e) => {
+          fileInputChangeHandler(e);
+        }}
+      />
       <Button
+        type="click"
         size="mid"
         text="odstrániť"
-        disabled={localPhotoUrl !== null}
         onClick={removePhoto}
+        disabled={localPhotoUrl === null}
       />
-      <Button
-        size="mid"
-        text="zmeniť"
-        disabled={localPhotoUrl !== null}
-        onClick={chooseNewPhoto}
-      />
+      <Label size="mid" forName="sign-up-photo-input" text="zmeniť" />
     </MainWrapper>
   );
 };

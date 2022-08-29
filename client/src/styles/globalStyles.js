@@ -69,7 +69,8 @@ const GlobalStyle = createGlobalStyle`
         .sign-up-header,
         .sign-up-password-match,
         .progress-bar-text,
-        .sign-up-cookies-text {
+        .sign-up-cookies-text,
+        ul {
 
             color: ${COLORS.SECONDARY};
 
@@ -90,11 +91,25 @@ const GlobalStyle = createGlobalStyle`
 
         }
 
-        button {
+        button,
+        label {
 
             background: ${COLORS.PRIMARY};
-            &.large {
+            color: ${COLORS.SECONDARY};
+            
+            &.button-large,
+            &.label-large {
                 box-shadow: -11px 11px 22px rgba(74, 52, 65, 0.2), 11px -11px 22px rgba(74, 52, 65, 0.2), -11px -11px 22px rgba(122, 84, 105, 0.9), 11px 11px 28px rgba(74, 52, 65, 0.9), inset 1px 1px 2px rgba(122, 84, 105, 0.3), inset -1px -1px 2px rgba(74, 52, 65, 0.5);
+            }
+            
+            &.button-mid,
+            &.label-mid {
+                box-shadow: -4px 4px 8px rgba(81, 56, 71, 0.2), 4px -4px 8px rgba(81, 56, 71, 0.2), -4px -4px 8px rgba(115, 80, 99, 0.9), 4px 4px 10px rgba(81, 56, 71, 0.9), inset 1px 1px 2px rgba(115, 80, 99, 0.3), inset -1px -1px 2px rgba(81, 56, 71, 0.5);
+            }
+            
+            &.button-small,
+            &.label-small {
+                box-shadow: -4px 4px 8px rgba(81, 56, 71, 0.2), 4px -4px 8px rgba(81, 56, 71, 0.2), -4px -4px 8px rgba(115, 80, 99, 0.9), 4px 4px 10px rgba(81, 56, 71, 0.9), inset 1px 1px 2px rgba(115, 80, 99, 0.3), inset -1px -1px 2px rgba(81, 56, 71, 0.5);
             }
         }
 
@@ -168,7 +183,8 @@ const GlobalStyle = createGlobalStyle`
         .sign-up-header,
         .sign-up-password-match,
         .progress-bar-text,
-        .sign-up-cookies-text {
+        .sign-up-cookies-text,
+        ul {
 
             color: ${COLORS.PRIMARY};
 
@@ -189,13 +205,26 @@ const GlobalStyle = createGlobalStyle`
         }
 
         
-        button {
+        button,
+        label {
 
             background: ${COLORS.SECONDARY};
-            &.large {
+            color: ${COLORS.PRIMARY};
+            
+            &.button-large,
+            &.label-large {
                 box-shadow: -11px 11px 22px rgba(197, 197, 197, 0.2), 11px -11px 22px rgba(197, 197, 197, 0.2), -11px -11px 22px rgba(255, 255, 255, 0.9), 11px 11px 28px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(197, 197, 197, 0.9), inset -1px -1px 2px rgba(197, 197, 197, 0.9);
             }
 
+            &.button-mid,
+            &.label-mid {
+                box-shadow: -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(197, 197, 197, 0.5);
+            }
+            
+            &.button-small,
+            &.label-small {
+                box-shadow: -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(197, 197, 197, 0.5);
+            }
         }
 
         .progress-bar-wrapper {
