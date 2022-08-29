@@ -1,6 +1,7 @@
 // global imports
 import { useSelector, useDispatch } from "react-redux";
 import { useRef } from "react";
+import axios from "axios";
 
 // Redux actions imports
 import updateDataSignUpForm from "../../actions/dataSignUpForm";
@@ -8,6 +9,7 @@ import updateDataSignUpForm from "../../actions/dataSignUpForm";
 // component imports
 import Button from "../General/Button";
 import Label from "../SignUp/FileInputLabel";
+import PhotoCropper from "./PhotoCropper";
 
 // styled components imports
 import { useState } from "react";
@@ -41,6 +43,7 @@ const MidPart = () => {
 
   const [filesChosen, setFilesChosen] = useState(null);
   const [localPhotoUrl, setLocalPhotoUrl] = useState(null);
+  const [readyPhotoUrl, setReadyPhotoUrl] = useState(null);
 
   const fileInputElem = useRef();
 
@@ -71,9 +74,6 @@ const MidPart = () => {
     // the user clear it themselves, they still can upload the same
     // picture twice in the row.
     e.target.value = null;
-    // Updating Redux state of the whole sign up form with new photo.
-    const updatedFormData = new UpdatedFormData(e.target.files[0]);
-    dispatch(updateDataSignUpForm({ ...updatedFormData }));
   };
 
   // When the photo is deleted, both states update to null.
@@ -83,10 +83,26 @@ const MidPart = () => {
   // methods, for now, this was chosen as the best to go with.
   const removePhoto = () => {
     setFilesChosen(null);
-    setLocalPhotoUrl(null);
+    setReadyPhotoUrl(null);
     // Updating Redux state of the whole sign up form with
     // empty photo field.
     const updatedFormData = new UpdatedFormData("");
+    dispatch(updateDataSignUpForm({ ...updatedFormData }));
+  };
+
+  const saveEditedPhoto = async (newUrl) => {
+    setLocalPhotoUrl(null);
+
+    // converting the blob url into file so that it can be uploaded then
+    const file = await fetch(newUrl)
+      .then((r) => r.blob())
+      .then(
+        (blobFile) => new File([blobFile], "photo", { type: blobFile.type })
+      );
+
+    setReadyPhotoUrl(URL.createObjectURL(file));
+    // Updating Redux state of the whole sign up form with new photo.
+    const updatedFormData = new UpdatedFormData(file);
     dispatch(updateDataSignUpForm({ ...updatedFormData }));
   };
 
@@ -97,8 +113,8 @@ const MidPart = () => {
           className="sign-up-photo-wrapper"
           // onClick={() => document.getElementById("sign-up-photo-input").click()}
         >
-          {localPhotoUrl ? (
-            <Photo src={localPhotoUrl} alt="Fotka, ktorú si si zvolil/a" />
+          {readyPhotoUrl ? (
+            <Photo src={readyPhotoUrl} alt="Fotka, ktorú si si zvolil/a" />
           ) : (
             <TextContent>chcem pridať aj svoju fotku</TextContent>
           )}
@@ -119,9 +135,12 @@ const MidPart = () => {
         size="mid"
         text="odstrániť"
         onClick={removePhoto}
-        disabled={localPhotoUrl === null}
+        disabled={readyPhotoUrl === null}
       />
       <Label size="mid" forName="sign-up-photo-input" text="zmeniť" />
+      {localPhotoUrl && (
+        <PhotoCropper photoURL={localPhotoUrl} onSave={saveEditedPhoto} />
+      )}
     </MainWrapper>
   );
 };

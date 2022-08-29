@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 // styles imports
-import { FONT_SIZES, FONT_FAMILIES } from "../../styles/variables";
+import { FONT_SIZES } from "../../styles/variables";
 
 // styled components
 const Button = styled.button`
@@ -18,6 +18,11 @@ const Button = styled.button`
 
   &.sign-up-button {
     width: 100%;
+  }
+
+  &#photo-cropper-button {
+    box-shadow: none;
+    margin-top: 30px;
   }
 `;
 

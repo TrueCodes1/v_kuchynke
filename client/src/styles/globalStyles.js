@@ -46,6 +46,24 @@ const GlobalStyle = createGlobalStyle`
         transition: .15s ease;
     }
 
+    .MuiDialogContent-root {
+        width: 400px;
+        position: relative;
+        background-color: transparent;
+        margin-bottom: 20px;
+    }
+
+    #photo-cropper-button-save {
+        color: ${COLORS.PRIMARY};
+        background: ${COLORS.SECONDARY};
+        font-weight: 600;
+    }
+
+    #photo-cropper-button-cancel {
+        color: ${COLORS.SECONDARY};
+        background: ${COLORS.PRIMARY};
+    }
+
     /* THIS CLASS APPLIES TO ALL THE COMPONENTS THAT CARRY THE CLASS 'dark' ONCE
     THE THEME OF THE APP IS SWITCHED, BUT DIFFERENTLY FOR SPECIFIC COMPONENTS
     (E.G. BACKGROUND CHANGES ITS BACKGROUND COLOR, TEXT CHANGES ITS COLOR, ...).
@@ -162,6 +180,7 @@ const GlobalStyle = createGlobalStyle`
                 opacity: .5;
             }
         }
+    
     }
     
     /* FOR CLOSER EXPLANATION, SEE THE COMMENT ABOVE THE CLASS 'dark', RIGHT BEFORE
