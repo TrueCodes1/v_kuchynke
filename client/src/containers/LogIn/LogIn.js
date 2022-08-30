@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import updateIsLoading from "../../actions/isLoading";
 
 // components imports
+import ChristmasTree from "../../components/General/ChristmasTree";
 import LogInForm from "../../components/LogIn/LogInForm";
 
 const LogIn = () => {
@@ -18,6 +19,7 @@ const LogIn = () => {
   };
   return (
     <>
+      <ChristmasTree />
       <LogInForm onFinished={finishLogIn} />
     </>
   );

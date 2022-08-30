@@ -83,7 +83,8 @@ const GlobalStyle = createGlobalStyle`
         .sign-up-cookies-text,
         ul,
         .loading-text,
-        .log-in-form-text {
+        .log-in-form-text,
+        .about-us-text  {
 
             color: ${COLORS.SECONDARY};
 
@@ -239,7 +240,8 @@ const GlobalStyle = createGlobalStyle`
         .sign-up-cookies-text,
         ul,
         .loading-text,
-        .log-in-form-text {
+        .log-in-form-text,
+        .about-us-text {
 
             color: ${COLORS.PRIMARY};
 

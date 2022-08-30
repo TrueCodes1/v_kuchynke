@@ -38,6 +38,12 @@ const Button = styled.button`
     margin: 20px 0 10px 0;
     float: right;
   }
+
+  &.about-us-link-button {
+    margin: 30px 0;
+    width: 300px;
+    padding: 20px 40px;
+  }
 `;
 
 export const LargeButton = styled(Button)`
