@@ -13,7 +13,13 @@ const Home = () => {
 
   return (
     <>
-      <Button size="large" text="tip na dnes" link="/daily-tip" />
+      <Button
+        type="link"
+        size="large"
+        text="tip na dnes"
+        onClick="/daily-tip"
+        classNames="home-page-daily-tip-button"
+      />
       <CookiesPopUp isDarkTheme={isDarkTheme} />
       <ChristmasTree />
       <Question isDarkTheme={isDarkTheme} />

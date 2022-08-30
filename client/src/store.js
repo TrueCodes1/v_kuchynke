@@ -5,10 +5,12 @@ import { combineReducers } from "redux";
 import countdownReducer from "./reduxReducers/dataReleaseCountdown";
 import darkThemeReducer from "./reduxReducers/isDarkTheme";
 import signUpFormReducer from "./reduxReducers/dataSignUpForm";
+import loadingReducer from "./reduxReducers/isLoading";
 
 // combined reducer holding the state of whole app
 export default combineReducers({
   isDarkTheme: darkThemeReducer.darkThemeReducer,
   dataReleaseCountdown: countdownReducer.releaseCountdownReducer,
   dataSignUpForm: signUpFormReducer.signUpForm,
+  isLoading: loadingReducer.loadingReducer,
 });

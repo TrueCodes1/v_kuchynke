@@ -10,9 +10,13 @@ import { Route, Routes } from "react-router-dom";
 // why in App.js is a styled component imported
 import { StyledBackground } from "./styledComponents/Background/Background";
 
+// constants imports
+import strings from "./constants/strings";
+
 // stable components imports
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Loading from "./components/General/Loading";
 
 // pages
 import About from "./pages/About/About";
@@ -35,6 +39,7 @@ import TermsOfUse from "./pages/TermsOfUse/TermsOfUse";
 const App = () => {
   // global Redux state, the only one needed in App.js
   const isDarkTheme = useSelector((state) => state.isDarkTheme);
+  const isLoading = useSelector((state) => state.isLoading);
 
   return (
     <>
@@ -45,6 +50,9 @@ const App = () => {
           { light: isDarkTheme !== true }
         )}`}
       >
+        {isLoading.isLoading && (
+          <Loading text={strings.LOADING[isLoading.loadingType]} />
+        )}
         <Navbar isDarkTheme={isDarkTheme} />
         <Footer isDarkTheme={isDarkTheme} />
         {/* <Countdown isDarkTheme={isDarkTheme} /> */}

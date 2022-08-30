@@ -36,4 +36,10 @@ const COOKIES_TEXT = {
   SIDE: `DÔLEŽITÉ: Registrovaním sa V Kuchynke vyjadruješ svoj súhlas s Pravidlami používania siete V Kuchynke, Zásadami ochrany osobných údajov a Pravidlami používania súborov cookies.`,
 };
 
-export default { RELEASE_DATE, NAVBAR, COOKIES_TEXT };
+const LOADING = {
+  REGISTRATION_SENT: `Registrujeme Ťa, potrvá malú chvíľku :-)`,
+  LOGIN_SENT: `Prihlasujeme Ťa, daj nám pár sekúnd :-)`,
+  QUESTION_SUGGESTION_SENT: `Tvoj návrh sa práve odosiela!`,
+};
+
+export default { RELEASE_DATE, NAVBAR, COOKIES_TEXT, LOADING };

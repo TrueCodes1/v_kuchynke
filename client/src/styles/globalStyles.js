@@ -46,13 +46,6 @@ const GlobalStyle = createGlobalStyle`
         transition: .15s ease;
     }
 
-    .MuiDialogContent-root {
-        width: 400px;
-        position: relative;
-        background-color: transparent;
-        margin-bottom: 20px;
-    }
-
     #photo-cropper-button-save {
         color: ${COLORS.PRIMARY};
         background: ${COLORS.SECONDARY};
@@ -88,7 +81,9 @@ const GlobalStyle = createGlobalStyle`
         .sign-up-password-match,
         .progress-bar-text,
         .sign-up-cookies-text,
-        ul {
+        ul,
+        .loading-text,
+        .log-in-form-text {
 
             color: ${COLORS.SECONDARY};
 
@@ -133,6 +128,10 @@ const GlobalStyle = createGlobalStyle`
 
         .progress-bar-wrapper {
             background: rgb(243, 243, 243, .25)
+        }
+        
+        .loading-animation-background{
+            background: rgb(98, 68, 85, .75)
         }
 
         &.theme-switch,
@@ -180,6 +179,41 @@ const GlobalStyle = createGlobalStyle`
                 opacity: .5;
             }
         }
+
+        .loading-animation-pancake {
+            .bubble {
+                background: ${COLORS.SECONDARY}
+            }    
+            
+            #pan, 
+            #pastry {
+                background: ${COLORS.SECONDARY}
+            }
+            
+            #handle {
+                border-top: 10px solid ${COLORS.SECONDARY};
+                border-left: 10px solid transparent
+            }
+             
+        }
+        
+        #question-suggestion-button {
+
+            background: ${COLORS.SECONDARY};
+            color: ${COLORS.PRIMARY};
+            
+            &.button-large {
+                box-shadow: -11px 11px 22px rgba(197, 197, 197, 0.2), 11px -11px 22px rgba(197, 197, 197, 0.2), -11px -11px 22px rgba(255, 255, 255, 0.9), 11px 11px 28px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(197, 197, 197, 0.9), inset -1px -1px 2px rgba(197, 197, 197, 0.9);
+            }
+
+            &.button-mid {
+                box-shadow: -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(197, 197, 197, 0.5);
+            }
+            
+            &.button-small {
+                box-shadow: -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(197, 197, 197, 0.5);
+            }
+        }
     
     }
     
@@ -203,7 +237,9 @@ const GlobalStyle = createGlobalStyle`
         .sign-up-password-match,
         .progress-bar-text,
         .sign-up-cookies-text,
-        ul {
+        ul,
+        .loading-text,
+        .log-in-form-text {
 
             color: ${COLORS.PRIMARY};
 
@@ -250,6 +286,10 @@ const GlobalStyle = createGlobalStyle`
             background: rgb(98, 68, 85, .25)
         }
 
+        .loading-animation-background{
+            background: rgb(243, 243, 243, .25)
+        }
+        
         &.theme-switch,
         .progress-bar-content,
         .navbar-underline  {
@@ -309,6 +349,41 @@ const GlobalStyle = createGlobalStyle`
             &::placeholder {
                 color: ${COLORS.PRIMARY};
                 opacity: .5;
+            }
+        }
+        
+        .loading-animation-pancake {
+            .bubble {
+                background: ${COLORS.PRIMARY}
+            }    
+            
+            #pan, 
+            #pastry {
+                background: ${COLORS.PRIMARY}
+            }
+            
+            #handle {
+                border-top: 10px solid ${COLORS.PRIMARY};
+                border-left: 10px solid transparent
+            }
+             
+        }
+
+        #question-suggestion-button {
+
+            background: ${COLORS.PRIMARY};
+            color: ${COLORS.SECONDARY};
+            
+            &.button-large {
+                box-shadow: -11px 11px 22px rgba(74, 52, 65, 0.2), 11px -11px 22px rgba(74, 52, 65, 0.2), -11px -11px 22px rgba(122, 84, 105, 0.9), 11px 11px 28px rgba(74, 52, 65, 0.9), inset 1px 1px 2px rgba(122, 84, 105, 0.3), inset -1px -1px 2px rgba(74, 52, 65, 0.5);
+            }
+            
+            &.button-mid{
+                box-shadow: -4px 4px 8px rgba(81, 56, 71, 0.2), 4px -4px 8px rgba(81, 56, 71, 0.2), -4px -4px 8px rgba(115, 80, 99, 0.9), 4px 4px 10px rgba(81, 56, 71, 0.9), inset 1px 1px 2px rgba(115, 80, 99, 0.3), inset -1px -1px 2px rgba(81, 56, 71, 0.5);
+            }
+            
+            &.button-small {
+                box-shadow: -4px 4px 8px rgba(81, 56, 71, 0.2), 4px -4px 8px rgba(81, 56, 71, 0.2), -4px -4px 8px rgba(115, 80, 99, 0.9), 4px 4px 10px rgba(81, 56, 71, 0.9), inset 1px 1px 2px rgba(115, 80, 99, 0.3), inset -1px -1px 2px rgba(81, 56, 71, 0.5);
             }
         }
     }

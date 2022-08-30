@@ -106,6 +106,10 @@ const MidPart = () => {
     dispatch(updateDataSignUpForm({ ...updatedFormData }));
   };
 
+  const cancelEditing = () => {
+    setLocalPhotoUrl(null);
+  };
+
   return (
     <MainWrapper>
       <label for="sign-up-photo-input">
@@ -139,7 +143,11 @@ const MidPart = () => {
       />
       <Label size="mid" forName="sign-up-photo-input" text="zmeniť" />
       {localPhotoUrl && (
-        <PhotoCropper photoURL={localPhotoUrl} onSave={saveEditedPhoto} />
+        <PhotoCropper
+          photoURL={localPhotoUrl}
+          onSave={saveEditedPhoto}
+          onCancel={cancelEditing}
+        />
       )}
     </MainWrapper>
   );

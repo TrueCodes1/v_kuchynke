@@ -1,11 +1,11 @@
 // importing styles
-import { LoadingAnimationStyle } from "../../styledComponents/General/LoadingAnimation";
+import { LoadingAnimationStyle } from "../../styles/General/LoadingAnimation";
 
 const LoadingAnimation = () => {
   return (
     <>
       <LoadingAnimationStyle />
-      <div id="cooking">
+      <div id="cooking" className="loading-animation-pancake">
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>

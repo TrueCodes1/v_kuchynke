@@ -2,11 +2,10 @@
 import { createGlobalStyle } from "styled-components";
 
 // styled components
-const anim_time = 2.1; // main pan/pancake animation (in seconds)
+const anim_time = 3; // main pan/pancake animation (in seconds)
 const flatten_deg = 85; // how round will the pancake be at the top/peak (in deg), affecting general animation though so not really adjustable
-const angle = 27; // max pan's angle while flipping (in deg)
-const peak = "40%"; // pancake's highest level, obviously ;)
-const color_back = "#ffde6b"; // background
+const angle = 35; // max pan's angle while flipping (in deg)
+const peak = "40px"; // pancake's highest level, obviously ;)
 const color = "#333";
 
 export const LoadingAnimationStyle = createGlobalStyle`
@@ -16,9 +15,10 @@ export const LoadingAnimationStyle = createGlobalStyle`
         position: relative;
         margin: 0 auto;
         top: 0;
-        width: 75vh;
-        height: 75vh;
+        width: 30vh;
+        height: 30vh;
         overflow: hidden;
+        overflow: visible;
         
         .bubble {
     
@@ -26,59 +26,50 @@ export const LoadingAnimationStyle = createGlobalStyle`
             border-radius: 100%;
             box-shadow: 0 0 .25vh lighten(${color}, 10%);
             opacity: 0;
+            bottom: 0;
 
         }
 
         .bubble:nth-child(1) {
 
-            margin-top: 2.5vh;
-            left: 58%;
+            left: 100px;
             width: 2.5vh;
             height: 2.5vh;
-            background-color: lighten(${color}, 7%);
             animation: bubble 2s cubic-bezier(.53, .16, .39, .96) infinite;
         
         }
         
         .bubble:nth-child(2) {
-            margin-top: 3vh;
-            left: 52%;
+            left: 110px;
             width: 2vh;
             height: 2vh;
-            background-color: lighten(${color}, 4%);
             animation: bubble 2s ease-in-out .35s infinite;
         
         }
         
         .bubble:nth-child(3) {
         
-            margin-top: 1.8vh;
-            left: 50%;
+            left: 115px;
             width: 1.5vh;
             height: 1.5vh;
-            background-color: ${color};
             animation: bubble 1.5s cubic-bezier(.53, .16, .39, .96) .55s infinite;
         
         }
         
         .bubble:nth-child(4) {
         
-            margin-top: 2.7vh;
-            left: 56%;
+            left: 120px;
             width: 1.2vh;
             height: 1.2vh;
-            background-color: darken(${color}, 3%);
             animation: bubble 1.8s cubic-bezier(.53, .16, .39, .96) .9s infinite;
         
         }
         
         .bubble:nth-child(5) {
         
-            margin-top: 2.7vh;
-            left: 63%;
+            left: 150px;
             width: 1.1vh;
             height: 1.1vh;
-            background-color: darken(${color}, 6%);
             animation: bubble 1.6s ease-in-out 1s infinite;
         
         }
@@ -88,9 +79,8 @@ export const LoadingAnimationStyle = createGlobalStyle`
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 50%;
-            height: 50%;
-            background-color: transparent;
+            width: 120px;
+            height: 120px;
             transform-origin: 15% 60%;
             animation: flip ${anim_time}s ease-in-out infinite;
         
@@ -106,12 +96,9 @@ export const LoadingAnimationStyle = createGlobalStyle`
             
                     position: absolute;
                     bottom: 45px;
-                    right: 144px;
+                    right: 140px;
                     width: 80px;
-                    height: 20%;
-                    background-color: transparent;
-                    border-top: 1vh solid ${color};
-                    border-left: 1vh solid transparent;
+                    height: 25px;
                     border-radius: 100%;
                     transform: rotate(20deg) rotateX(0deg) scale(1.3, .9);
                 
@@ -120,11 +107,10 @@ export const LoadingAnimationStyle = createGlobalStyle`
                 #pan {
                 
                     position: absolute;
-                    bottom: 20%;
-                    right: 30%;
+                    bottom: 25px;
+                    right: 33px;
                     width: 100px;
                     height: 20px;
-                    background-color: ${color};
                     border-radius: 0 0 1.4em 1.4em;
                     transform-origin: -15% 0;
                 
@@ -135,22 +121,19 @@ export const LoadingAnimationStyle = createGlobalStyle`
             #pancake {
             
                 position: absolute;
-                top: 24%;
-                left: 5px;
-                width: 100%;
-                height: 100%;
+                top: 25px;
+                width: 180px;
+                height: 115px;
                 transform: rotateX(85deg);
                 animation: jump ${anim_time}s ease-in-out infinite;
             
                 #pastry {
             
                     position: absolute;
-                    bottom: 26%;
+                    bottom: 28px;
                     right: 55px;
-                    width: 40%;
-                    height: 45%;
-                    background-color: ${color};
-                    box-shadow: 0 0 3px 0 ${color};
+                    width: 70px;
+                    height: 50px;
                     border-radius: 100%;
                     transform-origin: -20% 0;
                     animation: fly ${anim_time}s ease-in-out infinite;
@@ -167,21 +150,23 @@ export const LoadingAnimationStyle = createGlobalStyle`
     
         0% {
     
-            top: 24%;
+            top: 30px;
+            left: -60px;
             transform: rotateX(${flatten_deg}deg);
         
         }
         
-        25% {
+        15% {
         
-            top: 10%;
-            transform: rotateX(0deg);
+            top: -20px;
+            transform: rotateX(-20deg);
         
         }
         
         50% {
         
-            top: 30%;
+            top: 30px;
+            left: 15px;
             transform: rotateX(${flatten_deg}deg);
         
         }
@@ -193,7 +178,8 @@ export const LoadingAnimationStyle = createGlobalStyle`
         }
         
         100% {
-        
+            
+            left: -65px;
             transform: rotateX(${flatten_deg}deg);
         
         }
@@ -208,6 +194,7 @@ export const LoadingAnimationStyle = createGlobalStyle`
         
         }
         
+
         5% {
         
             transform: rotate(-${angle}deg);
@@ -267,7 +254,7 @@ export const LoadingAnimationStyle = createGlobalStyle`
         
         0% {
         
-            bottom: 26%;
+            bottom: 26px;
             transform: rotate(0deg);
         
         }
@@ -280,7 +267,7 @@ export const LoadingAnimationStyle = createGlobalStyle`
         
         50% {
         
-            bottom: 26%;
+            bottom: 26px;
             transform: rotate(-190deg);
         
         }
@@ -293,7 +280,7 @@ export const LoadingAnimationStyle = createGlobalStyle`
         
         100% {
         
-            bottom: 26%;
+            bottom: 26px;
             transform: rotate(0deg);
         
         }
@@ -313,7 +300,7 @@ export const LoadingAnimationStyle = createGlobalStyle`
         50% {
         
             transform: scale(1.1, 1.1);
-            opacity: 1;
+            opacity: .5;
         
         }
         

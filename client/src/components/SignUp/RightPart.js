@@ -18,7 +18,7 @@ import {
   BottomWrapper,
 } from "../../styledComponents/SignUp/RightPart";
 
-const RightPart = () => {
+const RightPart = ({ onFinished }) => {
   const { photo, isReadyInPercentage } = useSelector(
     (state) => state.dataSignUpForm
   );
@@ -76,7 +76,7 @@ const RightPart = () => {
           size="large"
           text={photo !== "" ? "Registruj ma" : "Registruj ma aj bez fotky"}
           onClick={() => {
-            console.log("ready to registrate");
+            onFinished();
           }}
           disabled={isReadyInPercentage !== 100}
           classNames="sign-up-button"

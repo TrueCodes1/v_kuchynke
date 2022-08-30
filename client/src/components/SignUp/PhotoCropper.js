@@ -12,7 +12,7 @@ import {
 // components imports
 import Button from "../General/Button";
 
-const PhotoCropper = ({ photoURL, onSave }) => {
+const PhotoCropper = ({ photoURL, onSave, onCancel }) => {
   const [zoom, setZoom] = useState(1);
   const [editor, setEditor] = useState(null);
 
@@ -64,6 +64,7 @@ const PhotoCropper = ({ photoURL, onSave }) => {
         type="click"
         size="mid"
         text="zahodiť"
+        onClick={() => onCancel()}
         disabled={false}
         id="photo-cropper-button-cancel"
       />

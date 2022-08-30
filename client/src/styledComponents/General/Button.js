@@ -10,6 +10,7 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   margin: 10px 0;
+  font-weight: 600;
 
   &:disabled {
     opacity: 0.5;
@@ -23,6 +24,19 @@ const Button = styled.button`
   &#photo-cropper-button {
     box-shadow: none;
     margin-top: 30px;
+  }
+
+  &.home-page-daily-tip-button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 150px;
+  }
+
+  &#question-suggestion-button {
+    margin: 20px 0 10px 0;
+    float: right;
   }
 `;
 
@@ -41,7 +55,7 @@ export const MidButton = styled(Button)`
 `;
 
 export const SmallButton = styled(Button)`
-  font-size: ${FONT_SIZES.MEDIUM};
+  font-size: ${FONT_SIZES.MINI};
   border-radius: 5px;
   padding: 10px 40px;
   width: 170px;
