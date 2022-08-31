@@ -12,7 +12,7 @@ export const FONT_SIZES = {
   MEDIUM: "22px",
   SMALL: "18px",
   MINI: "16px",
-  ULTRA_MINI: "12px",
+  ULTRA_MINI: "14px",
 };
 
 export const FONT_FAMILIES = {

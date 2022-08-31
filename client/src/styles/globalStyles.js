@@ -84,7 +84,10 @@ const GlobalStyle = createGlobalStyle`
         ul,
         .loading-text,
         .log-in-form-text,
-        .about-us-text  {
+        .about-us-text,
+        .user-profile-name,
+        .profile-info-card-wrapper,
+        .profile-info-card-grid-text  {
 
             color: ${COLORS.SECONDARY};
 
@@ -224,6 +227,11 @@ const GlobalStyle = createGlobalStyle`
                 box-shadow: 1px 1px 2px rgba(131, 91, 114, 0.3), -1px -1px 2px rgba(65, 45, 56, 0.5), inset -4px 4px 8px rgba(65, 45, 56, 0.2), inset 4px -4px 8px rgba(65, 45, 56, 0.2), inset -4px -4px 8px rgba(131, 91, 114, 0.9), inset 4px 4px 10px rgba(65, 45, 56, 0.9);
             }
         }
+
+        .profile-info-card-wrapper {
+            background: ${COLORS.PRIMARY};
+            box-shadow: -11px 11px 22px rgba(79, 55, 69, 0.2), 11px -11px 22px rgba(79, 55, 69, 0.2), -11px -11px 22px rgba(117, 81, 101, 0.9), 11px 11px 28px rgba(79, 55, 69, 0.9), inset 1px 1px 2px rgba(117, 81, 101, 0.3), inset -1px -1px 2px rgba(79, 55, 69, 0.5);
+        }
     
     }
     
@@ -250,7 +258,10 @@ const GlobalStyle = createGlobalStyle`
         ul,
         .loading-text,
         .log-in-form-text,
-        .about-us-text {
+        .about-us-text,
+        .user-profile-name,
+        .profile-info-card-wrapper,
+        .profile-info-card-grid-text {
 
             color: ${COLORS.PRIMARY};
 
@@ -405,6 +416,11 @@ const GlobalStyle = createGlobalStyle`
             &.clicked {
                 box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(146, 146, 146, 0.5), inset -5px 5px 10px rgba(146, 146, 146, 0.2), inset 5px -5px 10px rgba(146, 146, 146, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(146, 146, 146, 0.9);
             }
+        }
+        
+        .profile-info-card-wrapper {
+            background: ${COLORS.SECONDARY};
+            box-shadow: -23px 23px 46px rgba(151, 151, 151, 0.2), 23px -23px 46px rgba(151, 151, 151, 0.2), -23px -23px 46px rgba(255, 255, 255, 0.9), 23px 23px 58px rgba(151, 151, 151, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(151, 151, 151, 0.5);
         }
     }
 

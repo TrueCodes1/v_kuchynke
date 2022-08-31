@@ -10,7 +10,7 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   margin: 10px 0;
-  font-weight: 600;
+  font-weight: 400;
 
   &:disabled {
     opacity: 0.5;
@@ -43,6 +43,11 @@ const Button = styled.button`
     margin: 30px 0;
     width: 300px;
     padding: 20px 40px;
+  }
+
+  &.profile-card-button {
+    width: 100%;
+    padding: 20px 0;
   }
 `;
 
