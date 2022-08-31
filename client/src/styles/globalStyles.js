@@ -215,6 +215,15 @@ const GlobalStyle = createGlobalStyle`
                 box-shadow: -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(197, 197, 197, 0.5);
             }
         }
+
+        .side-choice {
+            background: ${COLORS.PRIMARY};
+            box-shadow: -5px 5px 10px rgba(85, 59, 74, 0.2), 5px -5px 10px rgba(85, 59, 74, 0.2), -5px -5px 10px rgba(111, 77, 96, 0.9), 5px 5px 13px rgba(85, 59, 74, 0.9), inset 1px 1px 2px rgba(111, 77, 96, 0.3), inset -1px -1px 2px rgba(85, 59, 74, 0.5);
+            
+            &.clicked {
+                box-shadow: 1px 1px 2px rgba(131, 91, 114, 0.3), -1px -1px 2px rgba(65, 45, 56, 0.5), inset -4px 4px 8px rgba(65, 45, 56, 0.2), inset 4px -4px 8px rgba(65, 45, 56, 0.2), inset -4px -4px 8px rgba(131, 91, 114, 0.9), inset 4px 4px 10px rgba(65, 45, 56, 0.9);
+            }
+        }
     
     }
     
@@ -386,6 +395,15 @@ const GlobalStyle = createGlobalStyle`
             
             &.button-small {
                 box-shadow: -4px 4px 8px rgba(81, 56, 71, 0.2), 4px -4px 8px rgba(81, 56, 71, 0.2), -4px -4px 8px rgba(115, 80, 99, 0.9), 4px 4px 10px rgba(81, 56, 71, 0.9), inset 1px 1px 2px rgba(115, 80, 99, 0.3), inset -1px -1px 2px rgba(81, 56, 71, 0.5);
+            }
+        }
+        
+        .side-choice {
+            background: ${COLORS.SECONDARY};
+            box-shadow: -7px 7px 14px rgba(194, 194, 194, 0.2), 7px -7px 14px rgba(194, 194, 194, 0.2), -7px -7px 14px rgba(255, 255, 255, 0.9), 7px 7px 18px rgba(194, 194, 194, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(194, 194, 194, 0.5);
+
+            &.clicked {
+                box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(146, 146, 146, 0.5), inset -5px 5px 10px rgba(146, 146, 146, 0.2), inset 5px -5px 10px rgba(146, 146, 146, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(146, 146, 146, 0.9);
             }
         }
     }
