@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // components imports
 import ProfileInfoCard from "../General/ProfileInfoCard";
+import ProfileInfoCardOpened from "../General/ProfileInfoCardOpened";
 import ProfileUserIntro from "../General/ProfileUserIntro";
 
 // styled components imports
@@ -25,18 +26,30 @@ const General = () => {
       <ProfileInfoCard
         type="grid"
         header="Tvoje štatistiky"
-        opened={openedStats}
         open={handleClickStats}
         buttonText="pozrieť si štatistiky"
       />
+      {openedStats && (
+        <ProfileInfoCardOpened
+          type="stats"
+          close={handleClickStats}
+          header="Tvoje štatistiky"
+        />
+      )}
       <ProfileUserIntro />
       <ProfileInfoCard
         type="list"
         header="Tvoji priatelia"
-        opened={openedFriendsList}
         open={handleClickFriendsList}
         buttonText="pozrieť si celý zoznam"
       />
+      {openedFriendsList && (
+        <ProfileInfoCardOpened
+          type="friends"
+          close={handleClickFriendsList}
+          header="Tvoji priatelia"
+        />
+      )}
     </MainWrapper>
   );
 };

@@ -57,6 +57,15 @@ const GlobalStyle = createGlobalStyle`
         background: ${COLORS.PRIMARY};
     }
 
+    ::-webkit-scrollbar {
+        width: 5px
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 100px;
+        background: ${COLORS.SECONDARY};
+    }
+
     /* THIS CLASS APPLIES TO ALL THE COMPONENTS THAT CARRY THE CLASS 'dark' ONCE
     THE THEME OF THE APP IS SWITCHED, BUT DIFFERENTLY FOR SPECIFIC COMPONENTS
     (E.G. BACKGROUND CHANGES ITS BACKGROUND COLOR, TEXT CHANGES ITS COLOR, ...).
@@ -87,7 +96,9 @@ const GlobalStyle = createGlobalStyle`
         .about-us-text,
         .user-profile-name,
         .profile-info-card-wrapper,
-        .profile-info-card-grid-text  {
+        .profile-info-card-grid-text,
+        .profile-info-card-opened-header,
+        .text  {
 
             color: ${COLORS.SECONDARY};
 
@@ -134,7 +145,8 @@ const GlobalStyle = createGlobalStyle`
             background: rgb(243, 243, 243, .25)
         }
         
-        .loading-animation-background{
+        .loading-animation-background,
+        .profile-info-card-opened-wrapper{
             background: rgb(98, 68, 85, .75)
         }
 
@@ -261,7 +273,9 @@ const GlobalStyle = createGlobalStyle`
         .about-us-text,
         .user-profile-name,
         .profile-info-card-wrapper,
-        .profile-info-card-grid-text {
+        .profile-info-card-grid-text,
+        .profile-info-card-opened-header,
+        .text {
 
             color: ${COLORS.PRIMARY};
 
@@ -308,7 +322,8 @@ const GlobalStyle = createGlobalStyle`
             background: rgb(98, 68, 85, .25)
         }
 
-        .loading-animation-background{
+        .loading-animation-background,
+        .profile-info-card-opened-wrapper {
             background: rgb(243, 243, 243, .25)
         }
         

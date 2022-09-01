@@ -1,7 +1,14 @@
 // styled components imports
 import { StyledInput } from "../../styledComponents/General/Input";
 
-const Input = ({ type, placeholder, name, value, onChange }) => {
+const Input = ({
+  type,
+  placeholder,
+  name,
+  value,
+  onChange,
+  classNames = undefined,
+}) => {
   return (
     <>
       <StyledInput
@@ -10,6 +17,7 @@ const Input = ({ type, placeholder, name, value, onChange }) => {
         name={name}
         value={value}
         onChange={(e) => onChange(e)}
+        className={classNames}
       />
       <i className="fi fi-br-check"></i>
     </>

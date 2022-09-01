@@ -14,4 +14,8 @@ export const StyledInput = styled.input`
   border: none;
   background: transparent;
   margin: 10px 0;
+
+  &.my-recipes-search-input {
+    width: 55%;
+  }
 `;

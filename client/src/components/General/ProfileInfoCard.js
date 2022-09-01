@@ -34,7 +34,7 @@ import {
   ListContentMessageIcon,
 } from "../../styledComponents/General/ProfileInfoCard";
 
-const ProfileInfoCard = ({ type, header, opened, open, buttonText }) => {
+const ProfileInfoCard = ({ type, header, open, buttonText }) => {
   const isDarkTheme = useSelector((state) => state.isDarkTheme);
 
   return (
@@ -43,88 +43,70 @@ const ProfileInfoCard = ({ type, header, opened, open, buttonText }) => {
       <ContentWrapper className={classNames({ grid: type === "grid" })}>
         {type === "grid" && (
           <>
-            {opened ? (
-              <>opened</>
-            ) : (
-              <>
-                <ContentChild className="grid-child">
-                  <GridImg src={isDarkTheme ? heartLight : heartDark} />
-                  <GridText className="profile-info-card-grid-text">
-                    38 dohromady
-                  </GridText>
-                </ContentChild>
-                <ContentChild className="grid-child">
-                  <GridImg src={isDarkTheme ? listLight : listDark} />
-                  <GridText className="profile-info-card-grid-text">
-                    25 dohromady
-                  </GridText>
-                </ContentChild>
-                <ContentChild className="grid-child">
-                  <GridImg src={isDarkTheme ? varechaLight : varechaDark} />
-                  <GridText className="profile-info-card-grid-text">
-                    12 dohromady
-                  </GridText>
-                </ContentChild>
-                <ContentChild className="grid-child">
-                  <GridImg src={isDarkTheme ? peopleLight : peopleDark} />
-                  <GridText className="profile-info-card-grid-text">
-                    25 dohromady
-                  </GridText>
-                </ContentChild>
-              </>
-            )}
+            <ContentChild className="grid-child">
+              <GridImg src={isDarkTheme ? heartLight : heartDark} />
+              <GridText className="profile-info-card-grid-text">
+                38 dohromady
+              </GridText>
+            </ContentChild>
+            <ContentChild className="grid-child">
+              <GridImg src={isDarkTheme ? listLight : listDark} />
+              <GridText className="profile-info-card-grid-text">
+                25 dohromady
+              </GridText>
+            </ContentChild>
+            <ContentChild className="grid-child">
+              <GridImg src={isDarkTheme ? varechaLight : varechaDark} />
+              <GridText className="profile-info-card-grid-text">
+                12 dohromady
+              </GridText>
+            </ContentChild>
+            <ContentChild className="grid-child">
+              <GridImg src={isDarkTheme ? peopleLight : peopleDark} />
+              <GridText className="profile-info-card-grid-text">
+                25 dohromady
+              </GridText>
+            </ContentChild>
           </>
         )}
         {type === "list" && (
           <>
-            {opened ? (
-              <>opened</>
-            ) : (
-              <>
-                <ContentChild>
-                  <ListImgWrapper>
-                    <ListImg src={photoMe} />
-                  </ListImgWrapper>
-                  <ListContentWrapper>
-                    <ListContentName>Norbert Sviatko</ListContentName>
-                    <ListContentSide>
-                      priatelia od 18. októbra 2022
-                    </ListContentSide>
-                  </ListContentWrapper>
-                  <ListContentMessageIcon
-                    src={isDarkTheme ? messageIconLight : messageIconDark}
-                  />
-                </ContentChild>
-                <ContentChild>
-                  <ListImgWrapper>
-                    <ListImg src={photoMe} />
-                  </ListImgWrapper>
-                  <ListContentWrapper>
-                    <ListContentName>Norbert Sviatko</ListContentName>
-                    <ListContentSide>
-                      priatelia od 18. októbra 2022
-                    </ListContentSide>
-                  </ListContentWrapper>
-                  <ListContentMessageIcon
-                    src={isDarkTheme ? messageIconLight : messageIconDark}
-                  />
-                </ContentChild>
-                <ContentChild>
-                  <ListImgWrapper>
-                    <ListImg src={photoMe} />
-                  </ListImgWrapper>
-                  <ListContentWrapper>
-                    <ListContentName>Norbert Sviatko</ListContentName>
-                    <ListContentSide>
-                      priatelia od 18. októbra 2022
-                    </ListContentSide>
-                  </ListContentWrapper>
-                  <ListContentMessageIcon
-                    src={isDarkTheme ? messageIconLight : messageIconDark}
-                  />
-                </ContentChild>
-              </>
-            )}
+            <ContentChild>
+              <ListImgWrapper>
+                <ListImg src={photoMe} />
+              </ListImgWrapper>
+              <ListContentWrapper>
+                <ListContentName>Norbert Sviatko</ListContentName>
+                <ListContentSide>priatelia od 18. októbra 2022</ListContentSide>
+              </ListContentWrapper>
+              <ListContentMessageIcon
+                src={isDarkTheme ? messageIconLight : messageIconDark}
+              />
+            </ContentChild>
+            <ContentChild>
+              <ListImgWrapper>
+                <ListImg src={photoMe} />
+              </ListImgWrapper>
+              <ListContentWrapper>
+                <ListContentName>Norbert Sviatko</ListContentName>
+                <ListContentSide>priatelia od 18. októbra 2022</ListContentSide>
+              </ListContentWrapper>
+              <ListContentMessageIcon
+                src={isDarkTheme ? messageIconLight : messageIconDark}
+              />
+            </ContentChild>
+            <ContentChild>
+              <ListImgWrapper>
+                <ListImg src={photoMe} />
+              </ListImgWrapper>
+              <ListContentWrapper>
+                <ListContentName>Norbert Sviatko</ListContentName>
+                <ListContentSide>priatelia od 18. októbra 2022</ListContentSide>
+              </ListContentWrapper>
+              <ListContentMessageIcon
+                src={isDarkTheme ? messageIconLight : messageIconDark}
+              />
+            </ContentChild>
           </>
         )}
       </ContentWrapper>
