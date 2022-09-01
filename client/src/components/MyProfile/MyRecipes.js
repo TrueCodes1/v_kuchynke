@@ -16,6 +16,7 @@ const MyRecipes = () => {
   const [division, setDivision] = useState("public");
   const [searchValue, setSearchValue] = useState("");
   const [order, setOrder] = useState(-1);
+  const [type, setType] = useState(0);
 
   const handleDivisionChange = () => {
     setDivision((prev) => (prev === "public" ? "private" : "public"));
@@ -27,6 +28,11 @@ const MyRecipes = () => {
 
   const handleOrderChange = () => {
     setOrder((prev) => (prev === -1 ? 1 : -1));
+  };
+
+  const handleTypeChange = (newType) => {
+    console.log(newType);
+    setType(newType);
   };
 
   return (
@@ -54,6 +60,8 @@ const MyRecipes = () => {
         onInputChange={handleSearchValueChange}
         order={order}
         onOrderChange={handleOrderChange}
+        type={type}
+        onTypeChange={handleTypeChange}
       />
     </MainWrapper>
   );

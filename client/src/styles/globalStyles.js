@@ -141,6 +141,16 @@ const GlobalStyle = createGlobalStyle`
             }
         }
 
+        .type-child {
+            background: ${COLORS.PRIMARY};
+            color: ${COLORS.SECONDARY};
+            box-shadow: -4px 4px 8px rgba(81, 56, 71, 0.2), 4px -4px 8px rgba(81, 56, 71, 0.2), -4px -4px 8px rgba(115, 80, 99, 0.9), 4px 4px 10px rgba(81, 56, 71, 0.9), inset 1px 1px 2px rgba(115, 80, 99, 0.3), inset -1px -1px 2px rgba(81, 56, 71, 0.5);
+        
+            &.chosen {
+                box-shadow: 1px 1px 2px rgba(127, 88, 111, 0.3), -1px -1px 2px rgba(69, 48, 60, 0.5), inset -2px 2px 4px rgba(69, 48, 60, 0.2), inset 2px -2px 4px rgba(69, 48, 60, 0.2), inset -2px -2px 4px rgba(127, 88, 111, 0.9), inset 2px 2px 5px rgba(69, 48, 60, 0.9);
+            }
+        }
+
         .progress-bar-wrapper {
             background: rgb(243, 243, 243, .25)
         }
@@ -185,7 +195,9 @@ const GlobalStyle = createGlobalStyle`
             }
         }
 
-        input{
+        input,
+        #my-recipes-search-zone,
+        .types-wrapper {
             box-shadow: 1px 1px 2px rgba(117, 81, 101, 0.3), -1px -1px 2px rgba(79, 55, 69, 0.5), inset -7px 7px 14px rgba(79, 55, 69, 0.2), inset 7px -7px 14px rgba(79, 55, 69, 0.2), inset -7px -7px 14px rgba(117, 81, 101, 0.9), inset 7px 7px 18px rgba(79, 55, 69, 0.9);
             background: ${COLORS.PRIMARY};
             color: ${COLORS.SECONDARY};
@@ -318,6 +330,16 @@ const GlobalStyle = createGlobalStyle`
             }
         }
 
+        .type-child {
+            background: ${COLORS.SECONDARY};
+            color: ${COLORS.PRIMARY};
+            box-shadow: -5px 5px 10px rgba(197, 197, 197, 0.2), 5px -5px 10px rgba(197, 197, 197, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(197, 197, 197, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(197, 197, 197, 0.5);
+        
+            &.chosen {
+                box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(104, 104, 104, 0.5), inset -2px 2px 4px rgba(104, 104, 104, 0.2), inset 2px -2px 4px rgba(104, 104, 104, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 5px rgba(104, 104, 104, 0.9);
+            }
+        }
+
         .progress-bar-wrapper {
             background: rgb(98, 68, 85, .25)
         }
@@ -378,7 +400,9 @@ const GlobalStyle = createGlobalStyle`
             }
         }
         
-        input{
+        input,
+        #my-recipes-search-zone,
+        .types-wrapper  {
             box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(199, 199, 199, 0.5), inset -3px 3px 6px rgba(199, 199, 199, 0.2), inset 3px -3px 6px rgba(199, 199, 199, 0.2), inset -3px -3px 6px rgba(255, 255, 255, 0.9), inset 3px 3px 8px rgba(199, 199, 199, 0.9);
             background: ${COLORS.SECONDARY};
             color: ${COLORS.PRIMARY};

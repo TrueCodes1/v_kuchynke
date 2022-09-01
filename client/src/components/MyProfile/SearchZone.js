@@ -1,5 +1,6 @@
 // components imports
 import SearchBar from "./SearchBar";
+import TypesChoice from "../General/TypesChoice";
 
 // styled components imports
 import {
@@ -17,6 +18,8 @@ const SearchZone = ({
   onInputChange,
   order,
   onOrderChange,
+  type,
+  onTypeChange,
 }) => {
   return (
     <MainWrapper>
@@ -43,6 +46,23 @@ const SearchZone = ({
           </OrderChoiceChild>
         </OrderChoiceWrapper>
       </TopPart>
+      <TypesChoice
+        id="my-recipes-search-zone"
+        label="hľadať v"
+        types={[
+          "všetky kategórie",
+          "nezaradené recepty",
+          "druhé jedlá",
+          "polievky",
+          "omáčky",
+          "zákusky",
+          "špeciality",
+          "prílohy",
+          "vianočné",
+        ]}
+        type={type}
+        onTypeChange={onTypeChange}
+      />
     </MainWrapper>
   );
 };
