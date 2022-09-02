@@ -1,5 +1,5 @@
 // global imports
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // styles imports
 import { FONT_SIZES } from "../../styles/variables";
@@ -11,6 +11,31 @@ export const MainWrapper = styled.div`
   padding: 20px;
   border-radius: 5px;
   overflow: hidden;
+  max-height: 300px;
+  transition: max-height 0.5s;
+
+  &.rolled-up {
+    max-height: 62px;
+    transition: max-height 0.5s;
+  }
+`;
+
+export const TopPart = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const RollUpIcon = styled.img`
+  width: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.5s;
+
+  &.rotated {
+    transform: rotateZ(180deg);
+  }
 `;
 
 export const Label = styled.p`
