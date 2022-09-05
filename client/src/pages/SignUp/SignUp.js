@@ -1,8 +1,21 @@
+// components imports
+import LeftPart from "../../components/SignUp/LeftPart";
+import MidPart from "../../components/SignUp/MidPart";
+
 // containers imports
-import SignUpContainer from "../../containers/SignUp/SignUp";
+import RightPart from "../../containers/SignUp/RightPart";
+
+// styled components imports
+import { MainWrapper } from "../../styledComponents/SignUp/SignUp";
 
 const SignUp = () => {
-  return <SignUpContainer />;
+  return (
+    <MainWrapper>
+      <LeftPart />
+      <MidPart />
+      <RightPart />
+    </MainWrapper>
+  );
 };
 
 export default SignUp;

@@ -1,7 +1,15 @@
+// components imports
+import ChristmasTree from "../../components/General/ChristmasTree";
+
 // containers imports
-import LogInContainer from "../../containers/LogIn/LogIn";
+import LogInForm from "../../containers/LogIn/LogInForm";
 
 const LogIn = () => {
-  return <LogInContainer />;
+  return (
+    <>
+      <ChristmasTree />
+      <LogInForm />
+    </>
+  );
 };
 export default LogIn;

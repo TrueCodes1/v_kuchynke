@@ -11,7 +11,7 @@ import {
   TextUnderInput,
 } from "../../styledComponents/LogIn/LogInForm";
 
-const LogInForm = ({ onFinished }) => {
+const LogInForm = ({ onLoginRequest, onLoginResponse }) => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
@@ -21,6 +21,13 @@ const LogInForm = ({ onFinished }) => {
 
   const handlePasswordChange = (e) => {
     setLoginPassword(e.target.value);
+  };
+
+  const handleLoginFinished = () => {
+    onLoginRequest();
+    setTimeout(() => {
+      onLoginResponse();
+    }, 2500);
   };
 
   return (
@@ -46,7 +53,7 @@ const LogInForm = ({ onFinished }) => {
         type="click"
         size="mid"
         text="prihlás ma"
-        onClick={onFinished}
+        onClick={() => handleLoginFinished()}
         disabled={loginEmail.length === 0 || loginPassword.length === 0}
       />
     </MainWrapper>

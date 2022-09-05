@@ -1,7 +1,14 @@
-// containers imports
-import AboutContainer from "../../containers/About/About";
+// components imports
+import AboutContent from "../../components/About/AboutContent";
+import ChristmasTree from "../../components/General/ChristmasTree";
 
 const About = () => {
-  return <AboutContainer />;
+  return (
+    <>
+      <ChristmasTree />
+      <AboutContent />
+    </>
+  );
 };
+
 export default About;

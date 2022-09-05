@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { Link, useLocation } from "react-router-dom";
 
 // constants imports
-import strings from "../../constants/strings";
+import { NAVBAR } from "../../constants/strings";
 
 // components imports
 import BrandingHeart from "./BrandingHeart";
@@ -30,7 +30,7 @@ const Navbar = ({ isDarkTheme, isUserLoggedIn, isChristmasTheme }) => {
         <ChristmasLights isDarkTheme={isDarkTheme} />
         <ThemeSwitch isDarkTheme={isDarkTheme} />
         <NavList>
-          {strings.NAVBAR.USER_LOGGED_OUT.map((route) => (
+          {NAVBAR.USER_LOGGED_OUT.map((route) => (
             <Link to={route.ROUTE} key={route.ROUTE}>
               <NavItem>
                 {route.TEXT}

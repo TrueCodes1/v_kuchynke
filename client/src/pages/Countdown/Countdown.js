@@ -1,11 +1,16 @@
+// styled components imports
+import { Parent } from "../../styledComponents/ReleaseDate/CountdownContainer";
+
 // containers imports
-import CountdownContainer from "../../containers/Countdown/Countdown";
+import Branding from "../../containers/Countdown/Branding";
+import Counter from "../../containers/Countdown/Counter";
 
 const Countdown = () => {
   return (
-    <>
-      <CountdownContainer />
-    </>
+    <Parent>
+      <Branding />
+      <Counter />
+    </Parent>
   );
 };
 

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import React from "react";
 
 // strings imports
-import strings from "../../constants/strings";
+import { RELEASE_DATE } from "../../constants/strings";
 
 // styled components imports
 import {
@@ -24,7 +24,7 @@ const CounterChild = ({ content, isDarkTheme, type }) => {
     >
       <Number data-testid="counter-child-number">{content.number}</Number>
       <Unit data-testid="counter-child-text">
-        {strings.RELEASE_DATE[type][content.type]}
+        {RELEASE_DATE[type][content.type]}
       </Unit>
     </Parent>
   );

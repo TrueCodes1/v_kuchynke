@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     &.light,
     * {
         
-        transition: all .15s ease;
+        transition: all .25s ease;
 
     }
 

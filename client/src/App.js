@@ -11,7 +11,7 @@ import { Route, Routes } from "react-router-dom";
 import { StyledBackground } from "./styledComponents/Background/Background";
 
 // constants imports
-import strings from "./constants/strings";
+import { LOADING } from "./constants/strings";
 
 // stable components imports
 import Navbar from "./components/Navbar/Navbar";
@@ -51,7 +51,7 @@ const App = () => {
         )}`}
       >
         {isLoading.isLoading && (
-          <Loading text={strings.LOADING[isLoading.loadingType]} />
+          <Loading text={LOADING[isLoading.loadingType]} />
         )}
         <Navbar isDarkTheme={isDarkTheme} />
         <Footer isDarkTheme={isDarkTheme} />
