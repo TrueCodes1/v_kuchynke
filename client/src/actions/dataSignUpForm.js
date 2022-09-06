@@ -1,9 +1,9 @@
 // Redux actions types imports
-import reduxActionsTypes from "../reduxActionsTypes/reduxActionsTypes";
+import { UPDATE_SIGN_UP_FORM } from "../actionsTypes/actionsTypes";
 
 const signUpForm = (dataSignUpForm) => {
   return {
-    type: reduxActionsTypes.updateSignUpForm,
+    type: UPDATE_SIGN_UP_FORM,
     payload: dataSignUpForm,
   };
 };

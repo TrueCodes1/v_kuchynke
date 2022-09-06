@@ -1,16 +1,14 @@
 // Redux actions types imports
-import reduxActionsTypes from "../reduxActionsTypes/reduxActionsTypes";
+import { UPDATE_LOADING } from "../actionsTypes/actionsTypes";
 
-const loadingReducer = (
+export const loadingReducer = (
   state = { isLoading: false, loadingType: "" },
   action
 ) => {
   switch (action.type) {
-    case reduxActionsTypes.updateLoading:
+    case UPDATE_LOADING:
       return action.payload;
     default:
       return state;
   }
 };
-
-export default { loadingReducer };

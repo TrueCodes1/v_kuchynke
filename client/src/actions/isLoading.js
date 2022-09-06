@@ -1,9 +1,9 @@
 // IMPORT REDUX ACTION TYPES
-import reduxActionsTypes from "../reduxActionsTypes/reduxActionsTypes";
+import { UPDATE_LOADING } from "../actionsTypes/actionsTypes";
 
 const loading = (isLoading) => {
   return {
-    type: reduxActionsTypes.updateLoading,
+    type: UPDATE_LOADING,
     payload: isLoading,
   };
 };

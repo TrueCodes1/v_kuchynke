@@ -1,6 +1,12 @@
 // global imports
 import { useState } from "react";
 
+// mocks imports
+import { mockRecipes } from "../../mockData/MyProfile/MyRecipes";
+
+// functions imports
+import { search } from "../../functions/General/search";
+
 // components imports
 import SearchZone from "./SearchZone";
 
@@ -12,27 +18,28 @@ import {
   TopDivisionChild,
 } from "../../styledComponents/MyProfile/MyRecipes";
 
-const MyRecipes = () => {
-  const [division, setDivision] = useState("public");
-  const [searchValue, setSearchValue] = useState("");
-  const [order, setOrder] = useState(-1);
-  const [type, setType] = useState(0);
+const MyRecipes = ({
+  division,
+  onDivisionChange,
+  searchValue,
+  onSearchValueChange,
+  order,
+  onOrderChange,
+  type,
+  onTypeChange,
+  numberOfResults,
+}) => {
+  const listForSearch = mockRecipes;
 
-  const handleDivisionChange = () => {
-    setDivision((prev) => (prev === "public" ? "private" : "public"));
+  const searchOption = {
+    includeScore: true,
+    keys: ["name"],
   };
 
-  const handleSearchValueChange = (e) => {
-    setSearchValue(e.target.value);
-  };
-
-  const handleOrderChange = () => {
-    setOrder((prev) => (prev === -1 ? 1 : -1));
-  };
-
-  const handleTypeChange = (newType) => {
-    console.log(newType);
-    setType(newType);
+  const searchInRecipes = (e) => {
+    onSearchValueChange(e);
+    const result = search(listForSearch, searchOption, e.target.value);
+    console.log(result);
   };
 
   return (
@@ -41,13 +48,13 @@ const MyRecipes = () => {
       <TopDivisionWrapper>
         <TopDivisionChild
           className={`text ${division === "public" && "chosen"}`}
-          onClick={() => handleDivisionChange()}
+          onClick={() => onDivisionChange()}
         >
           verejné
         </TopDivisionChild>
         <TopDivisionChild
           className={`text ${division === "private" && "chosen"}`}
-          onClick={() => handleDivisionChange()}
+          onClick={() => onDivisionChange()}
         >
           súkromné
         </TopDivisionChild>
@@ -57,11 +64,12 @@ const MyRecipes = () => {
         placeholder="Vyhľadaj recept..."
         name="my-recipes-search-input"
         value={searchValue}
-        onInputChange={handleSearchValueChange}
+        onInputChange={searchInRecipes}
         order={order}
-        onOrderChange={handleOrderChange}
+        onOrderChange={onOrderChange}
         type={type}
-        onTypeChange={handleTypeChange}
+        onTypeChange={onTypeChange}
+        numberOfResults={numberOfResults}
       />
     </MainWrapper>
   );

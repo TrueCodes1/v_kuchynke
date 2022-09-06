@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
     .cookies-popup-link {
         padding: 0 1.5px;
         border-bottom: 2px solid transparent;
-        transition: .15s ease;
+        transition: .25s ease;
     }
 
     #photo-cropper-button-save {

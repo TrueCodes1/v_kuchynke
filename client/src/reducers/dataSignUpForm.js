@@ -1,7 +1,7 @@
 // Redux actions types imports
-import reduxActionsTypes from "../reduxActionsTypes/reduxActionsTypes";
+import { UPDATE_SIGN_UP_FORM } from "../actionsTypes/actionsTypes";
 
-const signUpForm = (
+export const signUpFormReducer = (
   state = {
     firstName: "",
     isFirstNameCorrect: false,
@@ -20,11 +20,9 @@ const signUpForm = (
   action
 ) => {
   switch (action.type) {
-    case reduxActionsTypes.updateSignUpForm:
+    case UPDATE_SIGN_UP_FORM:
       return action.payload;
     default:
       return state;
   }
 };
-
-export default { signUpForm };

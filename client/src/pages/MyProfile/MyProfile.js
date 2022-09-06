@@ -2,16 +2,26 @@
 import { useState } from "react";
 
 // components imports
-import General from "../../components/MyProfile/General";
-import MyFeed from "../../components/MyProfile/MyFeed";
-import MyRecipes from "../../components/MyProfile/MyRecipes";
-import MySavedRecipes from "../../components/MyProfile/MySavedRecipes";
-import Settings from "../../components/MyProfile/Settings";
 import SideChoices from "../../components/MyProfile/SideChoices";
 
+// pages imports
+import General from "./General";
+import MyFeed from "./MyFeed";
+import MyRecipes from "./MyRecipes";
+import MySavedRecipes from "./MySavedRecipes";
+import Settings from "./Settings";
+
+// styled components imports
+import { MainWrapper } from "../../styledComponents/MyProfile/General";
+import ProfileInfoCard from "../../components/General/ProfileInfoCard";
+import ProfileInfoCardOpened from "../../components/General/ProfileInfoCardOpened";
+import ProfileUserIntro from "../../components/General/ProfileUserIntro";
+
 const MyProfile = () => {
+  // common My Profile states
   const [currentSideChoice, setCurrentSideChoice] = useState("general");
 
+  // common My Profile functions
   const handleSideChoice = (newSideChoice) => {
     setCurrentSideChoice(newSideChoice);
   };

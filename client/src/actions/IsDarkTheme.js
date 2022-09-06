@@ -1,9 +1,9 @@
 // IMPORT REDUX ACTION TYPES
-import reduxActionsTypes from "../reduxActionsTypes/reduxActionsTypes";
+import { UPDATE_THEME } from "../actionsTypes/actionsTypes";
 
 const darkTheme = (isDarkTheme) => {
   return {
-    type: reduxActionsTypes.updateTheme,
+    type: UPDATE_THEME,
     payload: isDarkTheme,
   };
 };

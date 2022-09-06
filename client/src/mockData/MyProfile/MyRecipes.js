@@ -1,7 +1,7 @@
 export const mockRecipes = [
   {
     id: 1,
-    name: "Cheesecake s čokoládovým karamelom a mandľami",
+    name: "Cheesecake s čokoládovým a mandľami",
     time: {
       formatted: "15. júla 2022, 15:25",
       raw: 3,
@@ -11,7 +11,7 @@ export const mockRecipes = [
   },
   {
     id: 2,
-    name: "Cheesecake s čokoládovým karamelom a mandľami",
+    name: "Cheesecake s čokoládovým karamelom",
     time: {
       formatted: "12. júla 2022, 15:25",
       raw: 2,

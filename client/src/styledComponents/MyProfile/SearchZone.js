@@ -43,3 +43,11 @@ export const OrderChoiceChild = styled.p`
     opacity: 1;
   }
 `;
+
+export const BottomPart = styled.div`
+  margin-top: 20px;
+`;
+
+export const NumberOfResults = styled.p`
+  opacity: 0.5;
+`;
