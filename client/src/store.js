@@ -16,6 +16,7 @@ import {
   orderOfResultsReducer,
   typeOfResults,
   numberOfResults,
+  searchResults,
 } from "./reducers/MyProfile/myRecipes";
 
 // combined reducer holding the state of whole app
@@ -31,4 +32,5 @@ export default combineReducers({
   myProfileMyRecipesOrderOfResults: orderOfResultsReducer,
   myProfileMyRecipesTypeOfResults: typeOfResults,
   myProfileMyRecipesNumberOfResults: numberOfResults,
+  myProfileMyRecipesSearchResults: searchResults,
 });

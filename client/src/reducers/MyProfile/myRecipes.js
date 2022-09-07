@@ -47,3 +47,12 @@ export const numberOfResults = (state = 0, action) => {
       return state;
   }
 };
+
+export const searchResults = (state = [], action) => {
+  switch (action.type) {
+    case MY_PROFILE.MY_RECIPES.UPDATE_RESULTS:
+      return action.payload;
+    default:
+      return state;
+  }
+};

@@ -9,6 +9,7 @@ import { search } from "../../functions/General/search";
 
 // components imports
 import SearchZone from "./SearchZone";
+import SearchResults from "./SearchResults";
 
 // styled components imports
 import {
@@ -28,6 +29,8 @@ const MyRecipes = ({
   type,
   onTypeChange,
   numberOfResults,
+  searchResults,
+  onSearchResultsChange,
 }) => {
   const listForSearch = mockRecipes;
 
@@ -39,7 +42,7 @@ const MyRecipes = ({
   const searchInRecipes = (e) => {
     onSearchValueChange(e);
     const result = search(listForSearch, searchOption, e.target.value);
-    console.log(result);
+    onSearchResultsChange(result);
   };
 
   return (
@@ -71,6 +74,7 @@ const MyRecipes = ({
         onTypeChange={onTypeChange}
         numberOfResults={numberOfResults}
       />
+      <SearchResults results={searchResults} />
     </MainWrapper>
   );
 };

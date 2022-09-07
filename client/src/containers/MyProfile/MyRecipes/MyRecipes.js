@@ -7,6 +7,7 @@ import {
   updateSearchValue,
   updateOrderOfResults,
   updateTypeOfResults,
+  updateSearchResults,
 } from "../../../actions/MyProfile/myRecipes";
 
 // components imports
@@ -19,6 +20,7 @@ const mapStateToProps = (state) => {
     order: state.myProfileMyRecipesOrderOfResults,
     type: state.myProfileMyRecipesTypeOfResults,
     numberOfResults: state.myProfileMyRecipesNumberOfResults,
+    searchResults: state.myProfileMyRecipesSearchResults,
   };
 };
 
@@ -35,6 +37,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onTypeChange: (idOfNewType) => {
       dispatch(updateTypeOfResults(idOfNewType));
+    },
+    onSearchResultsChange: (newSearchResults) => {
+      dispatch(updateSearchResults(newSearchResults));
     },
   };
 };

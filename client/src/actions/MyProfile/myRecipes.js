@@ -35,6 +35,13 @@ const numberOfResults = (newNumberOfResults) => {
   };
 };
 
+const searchResults = (newResults) => {
+  return {
+    type: MY_PROFILE.MY_RECIPES.UPDATE_RESULTS,
+    payload: newResults,
+  };
+};
+
 // actions dispatchers
 export const updateDivision = () => {
   return (dispatch) => {
@@ -63,5 +70,11 @@ export const updateTypeOfResults = (newTypeOfResults) => {
 export const updateNumberOfResults = (newNumberOfResults) => {
   return (dispatch) => {
     dispatch(numberOfResults(newNumberOfResults));
+  };
+};
+
+export const updateSearchResults = (newSearchResults) => {
+  return (dispatch) => {
+    dispatch(searchResults(newSearchResults));
   };
 };
