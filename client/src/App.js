@@ -50,13 +50,13 @@ const App = () => {
           { light: isDarkTheme !== true }
         )}`}
       >
-        {isLoading.isLoading && (
+        {/*{isLoading.isLoading && (
           <Loading text={LOADING[isLoading.loadingType]} />
         )}
         <Navbar isDarkTheme={isDarkTheme} />
-        <Footer isDarkTheme={isDarkTheme} />
-        {/* <Countdown isDarkTheme={isDarkTheme} /> */}
-        <Routes>
+        <Footer isDarkTheme={isDarkTheme} />*/}
+        <Countdown isDarkTheme={isDarkTheme} />
+        {/*<Routes>
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/cookies-policy" element={<CookiesPolicy />} />
@@ -72,7 +72,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
-        </Routes>
+        </Routes> */}
       </StyledBackground>
     </>
   );

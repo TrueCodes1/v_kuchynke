@@ -2,7 +2,7 @@
 import moment from "moment";
 
 // THE END DATE IS SET STATICALLY AS IT IS THE RELEASE DATE OF THIS WEB APP
-const endDate = moment(new Date("2022/10/18 18:00:00"));
+const endDate = moment(new Date("2022/12/02 18:00:00"));
 
 const findCurrentDateDifference = () => {
   const currentDifference = {
